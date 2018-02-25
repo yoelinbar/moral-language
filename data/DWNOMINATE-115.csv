@@ -1,0 +1,542 @@
+chamber,district_code,state_abbrev,affiliation,twitter_handle,bioname,dim1,dim2,log_likelihood,geo_mean_probability,number_of_votes,number_of_errors
+House,5,LA,R,RepAbraham,"ABRAHAM, Ralph",0.49,0.482,-20.64452,0.94545,368,7
+House,12,NC,D,RepAdams,"ADAMS, Alma",-0.462,0.009,-19.62187,0.94794,367,9
+House,4,AL,R,Robert_Aderholt,"ADERHOLT, Robert",0.36,0.587,-20.16111,0.94418,351,4
+House,31,CA,D,RepPeteAguilar,"AGUILAR, Peter Rey",-0.278,0.134,-36.60905,0.90407,363,21
+Senate,0,TN,R,SenAlexander,"ALEXANDER, Lamar",0.323,-0.184,-5.2977,0.96802,163,1
+House,12,GA,R,RepRickAllen,"ALLEN, Rick W.",0.617,0.458,-13.06101,0.96494,366,3
+House,3,MI,R,justinamash,"AMASH, Justin",0.671,-0.742,-178.85303,0.61426,367,80
+House,2,NV,R,MarkAmodeiNV2,"AMODEI, Mark E.",0.387,0.164,-23.09695,0.93786,360,6
+House,19,TX,R,RepArrington,"ARRINGTON, Jodey Cook",0.471,0.191,-13.85631,0.96295,367,3
+House,36,TX,R,RepBrianBabin,"BABIN, Brian",0.724,0.072,-20.31546,0.94498,359,13
+House,2,NE,R,,"BACON, Donald J.",0.393,-0.023,-21.7387,0.94264,368,6
+Senate,0,WI,D,SenatorBaldwin,"BALDWIN, Tammy",-0.542,-0.255,-31.30662,0.83181,170,16
+House,3,IN,R,RepJimBanks,"BANKS, James E.",0.625,-0.048,-16.78146,0.95518,366,4
+House,11,PA,R,RepLouBarletta,"BARLETTA, Lou",0.276,0.402,-15.54224,0.95607,346,3
+House,6,KY,R,RepAndyBarr,"BARR, Garland H. (Andy) IV",0.476,0.307,-19.97158,0.94647,363,10
+House,44,CA,D,RepBarragan,"BARRAGêÅN, Nanette Diaz",-0.537,0.098,-17.97594,0.9522,367,4
+Senate,0,WY,R,SenJohnBarrasso,"BARRASSO, John A.",0.528,0.226,-2.64773,0.98446,169,1
+House,6,TX,R,RepJoeBarton,"BARTON, Joe Linus",0.529,0.055,-15.53819,0.95821,364,4
+House,37,CA,D,RepKarenBass,"BASS, Karen",-0.56,-0.137,-16.06889,0.955,349,4
+House,3,OH,D,RepBeatty,"BEATTY, Joyce",-0.442,0.091,-25.9323,0.92936,354,11
+House,34,CA,D,AGBecerra,"BECERRA, Xavier",-0.512,-0.283,-0.00649,0.99964,18,0
+Senate,0,CO,D,SenBennetCO,"BENNET, Michael F.",-0.207,-0.11,-26.63836,0.85496,170,12
+House,7,CA,D,RepBera,"BERA, Ami",-0.223,-0.034,-45.49652,0.88341,367,20
+House,1,MI,R,RepJackBergman,"BERGMAN, John",0.346,0.38,-22.19116,0.94148,368,13
+House,8,VA,D,RepDonBeyer,"BEYER, Donald Sternoff Jr.",-0.38,-0.11,-34.73259,0.90729,357,18
+House,5,AZ,R,RepAndyBiggsAZ,"BIGGS, Andrew S.",0.836,-0.411,-29.81302,0.92218,368,12
+House,12,FL,R,RepGusBilirakis,"BILIRAKIS, Gus",0.398,0.028,-16.48119,0.95525,360,5
+House,8,MI,R,RepMikeBishop,"BISHOP, Michael Dean",0.432,0.135,-20.77255,0.94497,367,11
+House,1,UT,R,,"BISHOP, Robert (Rob)",0.532,0.123,-16.77783,0.95384,355,5
+House,2,GA,D,SanfordBishop,"BISHOP, Sanford Dixon, Jr.",-0.28,0.473,-66.52595,0.83085,359,37
+House,6,TN,R,RepDianeBlack,"BLACK, Diane",0.577,0.233,-12.63258,0.96465,351,3
+House,7,TN,R,MarshaBlackburn,"BLACKBURN, Marsha",0.614,0.129,-13.88488,0.96227,361,4
+House,1,IA,R,RepRodBlum,"BLUM, Rod",0.516,-0.456,-74.27289,0.81497,363,31
+House,3,OR,D,repblumenauer,"BLUMENAUER, Earl",-0.429,-0.659,-24.53648,0.93376,358,13
+Senate,0,CT,D,SenBlumenthal,"BLUMENTHAL, Richard",-0.407,-0.1,-30.37564,0.83549,169,16
+House,1,DE,D,RepBRochester,"BLUNT ROCHESTER, Lisa",-0.354,-0.191,-21.7924,0.9422,366,4
+Senate,0,MO,R,RoyBlunt,"BLUNT, Roy",0.431,0.288,-1.5217,0.99098,168,0
+House,1,OR,D,RepBonamici,"BONAMICI, Suzanne",-0.393,-0.37,-23.82621,0.93731,368,14
+Senate,0,NJ,D,CoryBooker,"BOOKER, Cory Anthony",-0.629,-0.232,-16.26534,0.90876,170,5
+Senate,0,AR,R,JohnBoozman,"BOOZMAN, John",0.402,0.246,-3.52537,0.97948,170,1
+House,12,IL,R,RepBost,"BOST, Mike",0.276,0.38,-26.53657,0.93006,366,18
+House,13,PA,D,RepBrendanBoyle,"BOYLE, Brendan Francis",-0.376,0.107,-35.58594,0.90538,358,10
+House,8,TX,R,RepKevinBrady,"BRADY, Kevin Patrick",0.52,0.214,-12.81849,0.96463,356,4
+House,1,PA,D,RepBrady,"BRADY, Robert A.",-0.481,0.22,-41.6747,0.89266,367,14
+House,7,VA,R,RepDaveBrat,"BRAT, David A.",0.845,-0.309,-22.5338,0.93965,362,7
+House,1,OK,R,RepJBridenstine,"BRIDENSTINE, Jim",0.69,-0.157,-25.51265,0.93028,353,6
+House,5,AL,R,RepMoBrooks,"BROOKS, Mo",0.596,-0.403,-27.67619,0.92459,353,9
+House,5,IN,R,SusanWBrooks,"BROOKS, Susan",0.381,0.314,-15.65217,0.95825,367,4
+House,4,MD,D,AnthonyBrownMD4,"BROWN, Anthony Gregory",-0.348,-0.234,-19.2835,0.9477,359,5
+Senate,0,OH,D,SenSherrodBrown,"BROWN, Sherrod",-0.439,-0.145,-26.51078,0.85561,170,10
+House,26,CA,D,JuliaBrownley26,"BROWNLEY, Julia",-0.277,0.035,-32.55121,0.91534,368,22
+House,16,FL,R,VernBuchanan,"BUCHANAN, Vernon G.",0.359,-0.156,-22.13197,0.94037,360,7
+House,4,CO,R,RepKenBuck,"BUCK, Kenneth Robert",0.737,-0.473,-23.96546,0.93662,366,15
+House,8,IN,R,RepLarryBucshon,"BUCSHON, Larry",0.398,0.25,-18.02911,0.95155,363,10
+House,13,NC,R,RepTedBudd,"BUDD, Theodore Paul",0.774,0.082,-17.65055,0.95304,367,6
+House,26,TX,R,michaelcburgess,"BURGESS, Michael C.",0.571,-0.233,-21.52265,0.94289,366,14
+Senate,0,NC,R,SenatorBurr,"BURR, Richard M.",0.454,-0.059,-1.98879,0.98795,164,0
+House,17,IL,D,RepCheri,"BUSTOS, Cheri",-0.239,0.052,-34.48497,0.91032,367,11
+House,1,NC,D,GKButterfield,"BUTTERFIELD, George Kenneth, Jr. (G.K.)",-0.405,0.207,-27.67519,0.92521,356,16
+House,1,AL,R,RepByrne,"BYRNE, Bradley",0.532,0.291,-16.77598,0.95544,368,5
+House,42,CA,R,KenCalvert,"CALVERT, Ken",0.347,0.199,-13.02651,0.96465,362,1
+Senate,0,WA,D,SenatorCantwell,"CANTWELL, Maria E.",-0.287,-0.402,-10.80989,0.93768,168,1
+Senate,0,WV,R,SenCapito,"CAPITO, Shelley Moore",0.258,0.051,-9.20686,0.94636,167,3
+House,7,MA,D,repmikecapuano,"CAPUANO, Michael Everett",-0.578,-0.087,-36.73823,0.90425,365,13
+House,24,CA,D,RepCarbajal,"CARBAJAL, Salud",-0.367,0.12,-27.68071,0.92735,367,11
+Senate,0,MD,D,SenatorCardin,"CARDIN, Benjamin Louis",-0.329,-0.256,-17.1801,0.90388,170,5
+Senate,0,DE,D,SenatorCarper,"CARPER, Thomas Richard",-0.174,-0.22,-26.18801,0.85324,165,12
+House,7,IN,D,RepAndreCarson,"CARSON, Andrê©",-0.431,0.071,-34.05522,0.90926,358,18
+House,1,GA,R,RepBuddyCarter,"CARTER, Buddy",0.555,0.32,-20.47246,0.94502,362,15
+House,31,TX,R,JudgeCarter,"CARTER, John R.",0.468,0.606,-17.83623,0.95244,366,5
+House,17,PA,D,RepCartwright,"CARTWRIGHT, Matt",-0.4,-0.014,-38.1013,0.90113,366,18
+Senate,0,PA,D,SenBobCasey,"CASEY, Robert (Bob), Jr.",-0.296,0.196,-16.36127,0.90824,170,6
+Senate,0,LA,R,BillCassidy,"CASSIDY, Bill",0.453,-0.105,-3.69664,0.97836,169,1
+House,14,FL,D,USRepKCastor,"CASTOR, Kathy",-0.434,0.03,-26.94804,0.92902,366,9
+House,20,TX,D,JoaquinCastrotx,"CASTRO, Joaquin",-0.401,0.051,-35.59686,0.90659,363,20
+House,1,OH,R,RepSteveChabot,"CHABOT, Steve",0.583,-0.262,-13.39127,0.96426,368,1
+House,3,UT,R,jasoninthehouse,"CHAFFETZ, Jason",0.647,-0.278,-10.59311,0.95867,251,5
+House,1,WY,R,RepLizCheney,"CHENEY, Liz",0.557,0.514,-11.86787,0.96775,362,2
+House,27,CA,D,RepJudyChu,"CHU, Judy",-0.504,-0.314,-20.19335,0.9456,361,9
+House,1,RI,D,RepCicilline,"CICILLINE, David N.",-0.398,-0.25,-18.70529,0.94991,364,8
+House,5,MA,D,RepKClark,"CLARK, Katherine M.",-0.48,-0.479,-14.97762,0.9588,356,3
+House,9,NY,D,RepYvetteClarke,"CLARKE, Yvette Diane",-0.605,-0.227,-22.57043,0.94035,367,9
+House,1,MO,D,LacyClayMO1,"CLAY, William Lacy, Jr.",-0.487,-0.058,-27.2715,0.92685,359,19
+House,5,MO,D,repcleaver,"CLEAVER, Emanuel, II",-0.451,0.011,-19.49608,0.93942,312,9
+House,6,SC,D,Clyburn,"CLYBURN, James Enos",-0.465,0.263,-23.69681,0.9338,346,9
+Senate,0,MS,R,SenThadCochran,"COCHRAN, William Thad",0.286,0.05,-4.00404,0.97672,170,0
+House,6,CO,R,RepMikeCoffman,"COFFMAN, Mike",0.499,-0.21,-37.45378,0.90248,365,22
+House,9,TN,D,RepCohen,"COHEN, Stephen",-0.4,-0.375,-41.81692,0.89231,367,17
+House,4,OK,R,TomColeOK04,"COLE, Tom",0.338,0.37,-20.63275,0.94354,355,5
+House,27,NY,R,RepChrisCollins,"COLLINS, Chris",0.369,0.199,-15.12288,0.95586,335,2
+House,9,GA,R,RepDougCollins,"COLLINS, Doug",0.648,0.029,-27.00626,0.92868,365,17
+Senate,0,ME,R,SenatorCollins,"COLLINS, Susan Margaret",0.107,-0.574,-30.47974,0.83586,170,16
+House,1,KY,R,KYComer,"COMER, James",0.568,0.057,-21.62624,0.94293,368,12
+House,10,VA,R,RepComstock,"COMSTOCK, Barbara J.",0.27,0.476,-23.96073,0.93491,356,8
+House,11,TX,R,ConawayTX11,"CONAWAY, K. Michael",0.591,0.352,-24.10607,0.93659,368,19
+House,11,VA,D,GerryConnolly,"CONNOLLY, Gerald E. (Gerry)",-0.303,-0.033,-28.18958,0.92626,368,16
+House,13,MI,D,RepJohnConyers,"CONYERS, John, Jr.",-0.658,-0.514,-25.22135,0.93288,363,11
+House,8,CA,R,RepPaulCook,"COOK, Paul",0.396,0.183,-26.11835,0.93149,368,10
+Senate,0,DE,D,ChrisCoons,"COONS, Christopher A.",-0.283,-0.229,-23.78125,0.86189,160,9
+House,5,TN,D,repjimcooper,"COOPER, James Hayes Shofner",-0.161,-0.033,-76.46556,0.81146,366,33
+Senate,0,TN,R,SenBobCorker,"CORKER, Robert (Bob)",0.391,-0.322,-14.21998,0.91884,168,5
+Senate,0,TX,R,JohnCornyn,"CORNYN, John",0.497,-0.017,-2.75638,0.98392,170,1
+House,46,CA,D,RepLouCorrea,"CORREA, Jose Luis",-0.285,0.43,-60.797,0.84733,367,31
+Senate,0,NV,D,SenCortezMasto,"CORTEZ MASTO, Catherine Marie",-0.341,0.441,-31.40761,0.83131,170,16
+House,16,CA,D,RepJimCosta,"COSTA, Jim",-0.185,0.468,-106.87459,0.73686,350,55
+House,6,PA,R,RepRyanCostello,"COSTELLO, Ryan",0.217,-0.038,-49.04911,0.86924,350,22
+Senate,0,AR,R,SenTomCotton,"COTTON, Tom",0.619,0.109,-6.20015,0.96419,170,2
+House,2,CT,D,RepJoeCourtney,"COURTNEY, Joe",-0.342,0.024,-31.38602,0.91782,366,14
+House,1,ND,R,RepKevinCramer,"CRAMER, Kevin",0.386,0.302,-17.94729,0.95176,363,6
+Senate,0,ID,R,MikeCrapo,"CRAPO, Michael Dean",0.507,0.274,-3.92227,0.97719,170,3
+House,1,AR,R,RepRickCrawford,"CRAWFORD, Rick",0.362,0.502,-15.17643,0.95815,355,3
+House,29,CA,D,RepCardenas,"CêÅRDENAS, Tony",-0.368,-0.019,-42.04624,0.89063,363,18
+House,13,FL,D,RepCharlieCrist,"CRIST, Charlie Joseph Jr.",-0.184,-0.099,-58.39065,0.85179,364,31
+House,14,NY,D,repjoecrowley,"CROWLEY, Joseph",-0.407,-0.074,-30.03647,0.91931,357,16
+Senate,0,TX,R,SenTedCruz,"CRUZ, Rafael Edward (Ted)",0.879,-0.397,-6.8492,0.95958,166,2
+House,28,TX,D,RepCuellar,"CUELLAR, Henry",-0.226,0.626,-85.33657,0.79253,367,42
+House,7,TX,R,CongCulberson,"CULBERSON, John",0.504,0.38,-18.55119,0.95044,365,6
+House,7,MD,D,RepCummings,"CUMMINGS, Elijah Eugene",-0.438,-0.148,-12.40885,0.94417,216,7
+House,26,FL,R,RepCurbelo,"CURBELO, Carlos",0.203,-0.204,-77.07781,0.80726,360,39
+Senate,0,MT,R,SteveDaines,"DAINES, Steve",0.529,-0.017,-3.84606,0.97763,170,2
+House,8,OH,R,WarrenDavidson,"DAVIDSON, Warren",0.731,-0.233,-26.18921,0.93076,365,8
+House,7,IL,D,RepDannyDavis,"DAVIS, Danny K.",-0.488,-0.248,-18.76907,0.94455,329,9
+House,13,IL,R,RodneyDavis,"DAVIS, Rodney",0.299,0.083,-25.7291,0.92628,336,14
+House,53,CA,D,RepSusanDavis,"DAVIS, Susan A.",-0.345,-0.094,-22.04796,0.93809,345,8
+House,4,OR,D,RepPeterDeFazio,"DeFAZIO, Peter Anthony",-0.428,0.008,-47.29041,0.87561,356,18
+House,1,CO,D,RepDianaDeGette,"DeGETTE, Diana",-0.435,-0.306,-21.96689,0.94159,365,10
+House,6,MD,D,RepJohnDelaney,"DELANEY, John",-0.274,0.016,-36.8594,0.90319,362,21
+House,3,CT,D,rosadelauro,"DeLAURO, Rosa L.",-0.418,-0.112,-27.77506,0.92614,362,11
+House,1,WA,D,RepDelBene,"DelBENE, Suzan K.",-0.277,-0.22,-29.09773,0.92398,368,11
+House,10,FL,D,RepValDemings,"DEMINGS, Valdez Butler",-0.34,-0.157,-24.75794,0.93407,363,9
+House,10,CA,R,RepJeffDenham,"DENHAM, Jeff",0.314,0.167,-29.96502,0.92139,366,17
+House,15,PA,R,RepCharlieDent,"DENT, Charles W.",0.242,-0.094,-47.5075,0.87827,366,14
+House,6,FL,R,RepDeSantis,"DeSANTIS, Ron",0.661,-0.114,-21.0308,0.94416,366,16
+House,11,CA,D,RepDeSaulnier,"DESAULNIER, Mark James",-0.539,-0.244,-18.48555,0.95075,366,11
+House,4,TN,R,DesJarlaisTN04,"DESJARLAIS, Scott",0.591,-0.12,-16.20426,0.95646,364,4
+House,22,FL,D,RepTedDeutch,"DEUTCH, Theodore E. (Ted)",-0.416,-0.063,-27.63941,0.92365,348,15
+House,25,FL,R,MarioDB,"DIAZ-BALART, Mario",0.278,0.086,-39.92633,0.89638,365,16
+House,12,MI,D,RepDebDingell,"DINGELL, Debbie",-0.445,-0.013,-17.77051,0.9521,362,10
+House,35,TX,D,RepLloydDoggett,"DOGGETT, Lloyd Alton, II",-0.402,-0.296,-26.76045,0.92893,363,12
+Senate,0,IN,D,SenDonnelly,"DONNELLY, Joe",-0.119,0.428,-25.36291,0.8591,167,8
+House,11,NY,R,RepDanDonovan,"DONOVAN, Daniel M., Jr.",0.228,0.131,-38.74315,0.89955,366,11
+House,14,PA,D,USRepMikeDoyle,"DOYLE, Michael F.",-0.326,0.124,-37.32351,0.90305,366,10
+Senate,0,IL,D,SenDuckworth,"DUCKWORTH, Tammy",-0.3,0.06,-37.16478,0.80259,169,16
+House,7,WI,R,RepSeanDuffy,"DUFFY, Sean",0.513,-0.163,-23.52033,0.93554,353,13
+House,3,SC,R,RepJeffDuncan,"DUNCAN, Jeff",0.741,-0.208,-15.191,0.95823,356,4
+House,2,TN,R,RepJohnDuncanJr,"DUNCAN, John J., Jr.",0.599,-0.447,-92.38331,0.7753,363,27
+House,2,FL,R,DrNealDunnFL2,"DUNN, Neal Patrick",0.491,0.664,-16.30933,0.9563,365,5
+Senate,0,IL,D,SenatorDurbin,"DURBIN, Richard Joseph",-0.364,-0.359,-19.15245,0.8885,162,6
+House,5,MN,D,keithellison,"ELLISON, Keith",-0.539,-0.559,-38.49113,0.8986,360,10
+House,6,MN,R,RepTomEmmer,"EMMER, Thomas Earl II",0.418,-0.07,-23.30908,0.93797,364,10
+House,16,NY,D,RepEliotEngel,"ENGEL, Eliot Lance",-0.407,-0.081,-37.93275,0.89616,346,15
+Senate,0,WY,R,SenatorEnzi,"ENZI, Michael B.",0.537,0.177,-4.21116,0.97553,170,2
+Senate,0,IA,R,joniernst,"ERNST, Joni",0.51,0.033,-4.5749,0.97329,169,2
+House,18,CA,D,RepAnnaEshoo,"ESHOO, Anna Georges",-0.383,-0.424,-26.23641,0.93101,367,7
+House,13,NY,D,RepEspaillat,"ESPAILLAT, Adriano J.",-0.58,-0.164,-20.36365,0.94602,367,8
+House,4,KS,R,RepRonEstes,"ESTES, Ron",0.55,-0.198,-13.71647,0.92503,176,2
+House,5,CT,D,RepEsty,"ESTY, Elizabeth",-0.305,-0.118,-30.57066,0.91987,366,12
+House,2,PA,D,RepDwightEvans,"EVANS, Dwight",-0.509,0.035,-26.81744,0.92841,361,13
+House,27,TX,R,farenthold,"FARENTHOLD, Blake",0.543,0.025,-21.20131,0.94402,368,8
+House,19,NY,R,RepJohnFaso,"FASO, John J.",0.264,-0.122,-51.02029,0.86988,366,24
+Senate,0,CA,D,SenFeinstein,"FEINSTEIN, Dianne",-0.263,-0.169,-13.6434,0.91079,146,6
+House,3,GA,R,RepDrewFerguson,"FERGUSON, Anderson Drew IV",0.573,0.247,-11.99925,0.96783,367,2
+Senate,0,NE,R,SenatorFischer,"FISCHER, Debra (Deb)",0.473,0.31,-3.36817,0.98038,170,2
+House,8,PA,R,RepBrianFitz,"FITZPATRICK, Brian K.",0.273,-0.448,-85.47463,0.79173,366,40
+Senate,0,AZ,R,JeffFlake,"FLAKE, Jeff",0.855,-0.518,-4.86049,0.97044,162,1
+House,3,TN,R,RepChuck,"FLEISCHMANN, Chuck",0.483,0.292,-20.20464,0.94658,368,6
+House,17,TX,R,RepBillFlores,"FLORES, Bill",0.606,0.316,-24.27713,0.93582,366,18
+House,1,NE,R,JeffFortenberry,"FORTENBERRY, Jeff",0.301,-0.072,-28.19004,0.92448,359,9
+House,11,IL,D,RepBillFoster,"FOSTER, Bill",-0.221,-0.223,-32.17805,0.91627,368,13
+House,5,NC,R,virginiafoxx,"FOXX, Virginia Ann",0.648,0.139,-22.23832,0.94136,368,16
+House,21,FL,D,RepLoisFrankel,"FRANKEL, Lois",-0.423,-0.043,-20.28849,0.94224,341,9
+Senate,0,MN,D,SenFranken,"FRANKEN, Al",-0.411,-0.157,-12.23999,0.92973,168,3
+House,8,AZ,R,RepTrentFranks,"FRANKS, Trent",0.748,0.095,-26.96215,0.92745,358,16
+House,11,NJ,R,USRepRodney,"FRELINGHUYSEN, Rodney P.",0.29,-0.281,-41.35619,0.89316,366,13
+House,11,OH,D,RepMarciaFudge,"FUDGE, Marcia L.",-0.583,0.105,-29.40283,0.92115,358,11
+House,2,HI,D,TulsiPress,"GABBARD, Tulsi",-0.28,-0.167,-46.08604,0.87663,350,18
+House,1,FL,R,RepMattGaetz,"GAETZ, Matthew L. II",0.723,-0.222,-46.33715,0.88078,365,25
+House,8,WI,R,RepGallagher,"GALLAGHER, Michael",0.572,-0.12,-36.81728,0.90355,363,20
+House,7,AZ,D,RepRubenGallego,"GALLEGO, Ruben",-0.444,-0.047,-38.94211,0.89413,348,15
+House,3,CA,D,RepGaramendi,"GARAMENDI, John",-0.315,-0.091,-31.84983,0.91644,365,13
+Senate,0,CO,R,SenCoryGardner,"GARDNER, Cory",0.456,0.002,-7.09844,0.9591,170,2
+House,5,VA,R,RepTomGarrett,"GARRETT, Thomas Alexander Jr.",0.99,-0.141,-33.73135,0.91079,361,14
+House,1,MT,R,,"GIANFORTE, Greg",0.348,0.704,-6.29716,0.94485,111,2
+House,7,OH,R,RepBobGibbs,"GIBBS, Bob",0.452,0.276,-29.2481,0.9232,366,20
+Senate,0,NY,D,SenGillibrand,"GILLIBRAND, Kirsten",-0.354,0.103,-74.82688,0.64393,170,35
+House,1,TX,R,replouiegohmert,"GOHMERT, Louie",0.596,-0.239,-49.70303,0.86761,350,15
+House,34,CA,D,JimmyGomezCA,"GOMEZ, Jimmy",-0.492,-0.678,-2.52085,0.97008,83,1
+House,15,TX,D,RepGonzalez,"GONZALEZ, Vicente Jr.",-0.349,0.62,-55.06014,0.85818,360,27
+House,6,VA,R,RepGoodlatte,"GOODLATTE, Robert William",0.493,-0.001,-19.09805,0.94916,366,5
+House,4,AZ,R,RepGosar,"GOSAR, Paul",0.604,-0.306,-28.70025,0.92149,351,14
+House,5,NJ,D,RepJoshG,"GOTTHEIMER, Josh S.",-0.133,0.108,-81.88964,0.80049,368,42
+House,4,SC,R,TGowdySC,"GOWDY, Trey",0.668,-0.035,-15.00712,0.95993,367,4
+Senate,0,SC,R,GrahamBlog,"GRAHAM, Lindsey O.",0.409,-0.176,-10.69099,0.93689,164,4
+House,12,TX,R,RepKayGranger,"GRANGER, Kay",0.39,0.227,-18.92328,0.94707,348,3
+Senate,0,IA,R,ChuckGrassley,"GRASSLEY, Charles Ernest",0.341,-0.07,-9.98535,0.94295,170,4
+House,6,LA,R,RepGarretGraves,"GRAVES, Garret",0.486,-0.067,-30.14174,0.91925,358,19
+House,6,MO,R,RepSamGraves,"GRAVES, Samuel",0.431,0.149,-23.01826,0.93756,357,15
+House,14,GA,R,RepTomGraves,"GRAVES, Tom",0.756,-0.085,-25.79105,0.93214,367,19
+House,9,TX,D,RepAlGreen,"GREEN, Al",-0.43,0.317,-38.57496,0.89758,357,18
+House,29,TX,D,RepGeneGreen,"GREEN, Raymond Eugene (Gene)",-0.321,0.451,-62.43673,0.84037,359,29
+House,9,VA,R,RepMGriffith,"GRIFFITH, H. Morgan",0.537,-0.455,-53.69066,0.8618,361,19
+House,3,AZ,D,RepRaulGrijalva,"GRIJALVA, Raê_l M.",-0.596,-0.255,-13.69734,0.96205,354,4
+House,6,WI,R,RepGrothman,"GROTHMAN, Glenn",0.602,-0.243,-28.02327,0.92451,357,9
+House,2,KY,R,RepGuthrie,"GUTHRIE, Brett",0.4,0.259,-15.89944,0.95715,363,4
+House,4,IL,D,RepGutierrez,"GUTIê_RREZ, Luis V.",-0.483,-0.268,-46.44879,0.87053,335,19
+House,1,HI,D,RepHanabusa,"HANABUSA, Colleen",-0.382,0.014,-25.78375,0.93198,366,8
+House,6,GA,R,RepKHandel,"HANDEL, Karen",0.459,0.321,-6.86755,0.93363,100,3
+House,3,MS,R,GreggHarper,"HARPER, Gregg",0.383,0.487,-12.9968,0.96521,367,3
+House,1,MD,R,RepAndyHarrisMD,"HARRIS, Andy",0.6,-0.292,-22.84019,0.937,351,5
+Senate,0,CA,D,SenKamalaHarris,"HARRIS, Kamala Devi",-0.663,0.209,-13.2771,0.92444,169,6
+House,4,MO,R,RepHartzler,"HARTZLER, Vicky",0.496,0.385,-21.88308,0.94134,362,10
+Senate,0,NH,D,SenatorHassan,"HASSAN, Margaret (Maggie)",-0.26,-0.363,-12.76511,0.92766,170,6
+House,20,FL,D,RepHastingsFL,"HASTINGS, Alcee Lamar",-0.564,0.143,-25.17813,0.93263,361,11
+Senate,0,UT,R,SenOrrinHatch,"HATCH, Orrin Grant",0.382,-0.005,-5.40849,0.96869,170,2
+House,10,WA,D,RepDennyHeck,"HECK, Denny",-0.321,-0.103,-29.18937,0.92334,366,10
+Senate,0,NM,D,MartinHeinrich,"HEINRICH, Martin",-0.285,-0.037,-32.71692,0.82399,169,15
+Senate,0,ND,D,SenatorHeitkamp,"HEITKAMP, Mary Kathryn (Heidi)",-0.127,0.392,-24.65688,0.86499,170,9
+Senate,0,NV,R,SenDeanHeller,"HELLER, Dean",0.463,-0.474,-46.23496,0.75941,168,18
+House,5,TX,R,RepHensarling,"HENSARLING, Jeb",0.704,0.039,-16.22008,0.95606,361,3
+House,3,WA,R,HerreraBeutler,"HERRERA BEUTLER, Jaime",0.384,-0.25,-39.07613,0.89926,368,18
+House,10,GA,R,CongressmanHice,"HICE, Jody Brownlow",0.715,-0.071,-17.97201,0.95195,365,14
+House,26,NY,D,RepBrianHiggins,"HIGGINS, Brian",-0.342,-0.032,-30.31188,0.91838,356,9
+House,3,LA,R,RepClayHiggins,"HIGGINS, Clay",0.42,0.294,-15.531,0.95845,366,4
+House,2,AR,R,RepFrenchHill,"HILL, French",0.465,0.144,-24.06921,0.93635,366,11
+House,4,CT,D,jahimes,"HIMES, James A.",-0.242,-0.26,-40.44305,0.89402,361,16
+Senate,0,HI,D,maziehirono,"HIRONO, Mazie",-0.488,-0.096,-20.17382,0.88491,165,9
+Senate,0,ND,R,SenJohnHoeven,"HOEVEN, John",0.338,0.335,-2.99483,0.98244,169,1
+House,2,NC,R,RepHolding,"HOLDING, George E.B.",0.654,0.117,-22.25228,0.9407,364,14
+House,9,IN,R,RepTrey,"HOLLINGSWORTH, Joseph Albert III",0.488,-0.196,-21.40537,0.9395,343,6
+House,5,MD,D,WhipHoyer,"HOYER, Steny Hamilton",-0.378,0.115,-23.70937,0.93643,361,5
+House,8,NC,R,RepRichHudson,"HUDSON, Richard",0.673,0.218,-20.50881,0.94079,336,15
+House,2,CA,D,RepHuffman,"HUFFMAN, Jared",-0.435,-0.487,-33.95806,0.91022,361,16
+House,2,MI,R,RepHuizenga,"HUIZENGA, Bill",0.637,-0.095,-17.06245,0.95333,357,11
+House,14,IL,R,RepHultgren,"HULTGREN, Randy",0.496,-0.04,-20.16172,0.9464,366,5
+House,50,CA,R,Rep_Hunter,"HUNTER, Duncan Duane",0.512,0.167,-30.28904,0.91973,362,10
+House,23,TX,R,HurdOnTheHill,"HURD, William Ballard",0.406,0.211,-33.77542,0.91092,362,17
+Senate,0,OK,R,jiminhofe,"INHOFE, James Mountain",0.551,0.037,-2.62097,0.98461,169,0
+Senate,0,GA,R,SenatorIsakson,"ISAKSON, Johnny",0.404,-0.016,-2.11225,0.98351,127,1
+House,49,CA,R,DarrellIssa,"ISSA, Darrell",0.508,-0.08,-20.373,0.94528,362,7
+House,18,TX,D,JacksonLeeTX18,"JACKSON LEE, Sheila",-0.456,0.125,-35.70714,0.90379,353,11
+House,7,WA,D,RepJayapal,"JAYAPAL, Pramila",-0.726,-0.181,-12.34417,0.96684,366,4
+House,8,NY,D,RepJeffries,"JEFFRIES, Hakeem",-0.482,-0.088,-21.22126,0.94068,347,13
+House,3,WV,R,RepEvanJenkins,"JENKINS, Evan H.",0.312,0.305,-33.11942,0.91303,364,19
+House,2,KS,R,RepLynnJenkins,"JENKINS, Lynn",0.526,-0.021,-23.40386,0.9346,346,19
+House,6,OH,R,RepBillJohnson,"JOHNSON, Bill",0.435,0.241,-24.09819,0.93628,366,18
+House,30,TX,D,RepEBJ,"JOHNSON, Eddie Bernice",-0.486,0.206,-31.35079,0.91525,354,15
+House,4,GA,D,RepHankJohnson,"JOHNSON, Hank",-0.475,0.063,-45.36887,0.87875,351,22
+House,4,LA,R,RepMikeJohnson,"JOHNSON, Mike",0.474,0.413,-13.98423,0.96241,365,4
+Senate,0,WI,R,SenRonJohnson,"JOHNSON, Ron",0.594,-0.328,-3.4154,0.97999,169,1
+House,3,TX,R,SamsPressShop,"JOHNSON, Sam",0.609,0.283,-12.17781,0.9586,288,3
+House,3,NC,R,RepWalterJones,"JONES, Walter Beaman, Jr.",0.238,-0.3,-367.36734,0.33727,338,156
+House,4,OH,R,Jim_Jordan,"JORDAN, Jim",0.703,-0.188,-28.49269,0.92203,351,17
+House,14,OH,R,RepDaveJoyce,"JOYCE, David",0.256,0.239,-37.03326,0.90301,363,21
+Senate,0,VA,D,timkaine,"KAINE, Timothy Michael (Tim)",-0.229,-0.111,-20.19181,0.88611,167,7
+House,9,OH,D,RepMarcyKaptur,"KAPTUR, Marcia Carolyn (Marcy)",-0.35,0.118,-62.69893,0.84137,363,26
+House,24,NY,R,RepJohnKatko,"KATKO, John",0.207,-0.03,-47.8035,0.87661,363,16
+House,9,MA,D,USRepKeating,"KEATING, William R.",-0.328,-0.163,-34.72191,0.90926,365,17
+House,3,PA,R,MikeKellyPA,"KELLY, Mike",0.317,0.521,-16.33545,0.9554,358,5
+House,2,IL,D,RepRobinKelly,"KELLY, Robin L.",-0.449,-0.026,-17.96517,0.95052,354,8
+House,1,MS,R,RepTrentKelly,"KELLY, Trent",0.556,0.309,-16.96548,0.95494,368,5
+Senate,0,LA,R,SenJohnKennedy,"KENNEDY, John Neely",0.682,0.375,-4.34573,0.97476,170,2
+House,4,MA,D,RepJoeKennedy,"KENNEDY, Joseph P. III",-0.433,-0.127,-19.48305,0.9483,367,8
+House,17,CA,D,RepRoKhanna,"KHANNA, Rohit",-0.578,-0.196,-17.73258,0.9522,362,6
+House,4,NV,D,RepKihuen,"KIHUEN, Ruben Jesus",-0.355,0.073,-29.79337,0.92057,360,12
+House,5,MI,D,RepDanKildee,"KILDEE, Dan",-0.413,-0.151,-23.15036,0.93805,362,12
+House,6,WA,D,RepDerekKilmer,"KILMER, Derek",-0.3,-0.066,-29.86544,0.92205,368,18
+House,3,WI,D,RepRonKind,"KIND, Ron",-0.264,-0.105,-56.01209,0.8581,366,27
+Senate,0,ME,D,SenAngusKing,"KING, Angus Stanley, Jr.",-0.146,-0.252,-36.43408,0.80709,170,23
+House,2,NY,R,RepPeteKing,"KING, Peter T.",0.261,-0.032,-34.15578,0.90753,352,9
+House,4,IA,R,SteveKingIA,"KING, Steve",0.618,0.276,-50.12188,0.8707,362,10
+House,16,IL,R,RepKinzinger,"KINZINGER, Adam",0.271,0.293,-27.84225,0.92694,367,20
+Senate,0,MN,D,amyklobuchar,"KLOBUCHAR, Amy",-0.24,-0.176,-13.61245,0.92305,170,3
+House,25,CA,R,SteveKnight25,"KNIGHT, Steve",0.43,0.134,-26.26807,0.93074,366,15
+House,8,IL,D,CongressmanRaja,"KRISHNAMOORTHI, S. Raja",-0.342,-0.17,-21.31308,0.94373,368,6
+House,2,NH,D,RepAnnieKuster,"KUSTER, Ann McLane",-0.259,-0.133,-38.28158,0.89965,362,21
+House,8,TN,R,repdavidkustoff,"KUSTOFF, David",0.531,-0.203,-20.4105,0.94576,366,5
+House,1,ID,R,Raul_Labrador,"LABRADOR, Raê_l R.",0.726,-0.569,-28.67436,0.91555,325,9
+House,18,IL,R,RepLaHood,"LaHOOD, Darin",0.441,0.052,-27.98937,0.92676,368,20
+House,1,CA,R,RepLaMalfa,"LaMALFA, Doug",0.56,0.067,-28.27465,0.92365,356,10
+House,5,CO,R,RepDLamborn,"LAMBORN, Doug",0.689,0.198,-17.1981,0.95335,360,4
+House,7,NJ,R,RepLanceNJ7,"LANCE, Leonard",0.342,-0.222,-56.14311,0.85779,366,26
+House,2,RI,D,JimLangevin,"LANGEVIN, James",-0.375,0.107,-27.39836,0.92749,364,9
+Senate,0,OK,R,SenatorLankford,"LANKFORD, James",0.562,0.169,-3.13882,0.98171,170,2
+House,2,WA,D,RepRickLarsen,"LARSEN, Richard Ray (Rick)",-0.365,0.204,-25.54206,0.92904,347,12
+House,1,CT,D,RepJohnLarson,"LARSON, John B.",-0.401,-0.059,-31.41088,0.91509,354,15
+House,5,OH,R,boblatta,"LATTA, Robert E.",0.518,0.253,-16.86501,0.95521,368,7
+House,14,MI,D,RepLawrence,"LAWRENCE, Brenda L",-0.447,-0.053,-19.61711,0.94697,360,11
+House,5,FL,D,RepAlLawsonJr,"LAWSON, Alfred Jr.",-0.226,-0.063,-47.62313,0.87768,365,25
+Senate,0,VT,D,SenatorLeahy,"LEAHY, Patrick Joseph",-0.374,-0.139,-12.79612,0.92624,167,3
+House,13,CA,D,RepBarbaraLee,"LEE, Barbara",-0.685,-0.642,-16.88342,0.95418,360,12
+Senate,0,UT,R,SenMikeLee,"LEE, Mike",0.919,-0.394,-10.74549,0.9384,169,4
+House,9,MI,D,repsandylevin,"LEVIN, Sander Martin",-0.377,-0.094,-24.04301,0.93675,368,16
+House,2,MN,R,RepJasonLewis,"LEWIS, Jason Mark",0.407,-0.094,-25.3236,0.93333,367,10
+House,5,GA,D,repjohnlewis,"LEWIS, John R.",-0.588,-0.236,-15.86497,0.95665,358,6
+House,33,CA,D,RepTedLieu,"LIEU, Ted",-0.336,-0.411,-28.18581,0.91644,323,17
+House,3,IL,D,RepLipinski,"LIPINSKI, Daniel",-0.236,0.194,-52.98167,0.86557,367,17
+House,2,NJ,R,RepLoBiondo,"LoBIONDO, Frank A.",0.212,-0.233,-78.17729,0.80861,368,33
+House,2,IA,D,daveloebsack,"LOEBSACK, Dave",-0.278,-0.057,-31.32464,0.91711,362,20
+House,19,CA,D,RepZoeLofgren,"LOFGREN, Zoe",-0.4,-0.458,-32.4241,0.91318,357,15
+House,7,MO,R,USRepLong,"LONG, Billy",0.567,0.33,-11.04266,0.96804,340,3
+House,11,GA,R,RepLoudermilk,"LOUDERMILK, Barry D.",0.669,-0.077,-18.13405,0.95127,363,7
+House,4,UT,R,RepMiaLove,"LOVE, Ludmya Bourdeau (Mia)",0.578,-0.055,-20.19327,0.94603,364,6
+House,47,CA,D,RepLowenthal,"LOWENTHAL, Alan",-0.441,-0.353,-19.50653,0.94796,365,9
+House,17,NY,D,NitaLowey,"LOWEY, Nita M.",-0.389,-0.159,-21.3088,0.94314,364,9
+House,3,OK,R,RepFrankLucas,"LUCAS, Frank D.",0.363,0.409,-21.71047,0.94271,368,7
+House,3,MO,R,RepBlainePress,"LUETKEMEYER, Blaine",0.448,0.238,-12.72646,0.96601,368,3
+House,1,NM,D,RepLujanGrisham,"LUJAN GRISHAM, Michelle",-0.324,0.092,-45.55403,0.88297,366,20
+House,3,NM,D,repbenraylujan,"LUJêÅN, Ben Ray",-0.368,0.039,-38.14779,0.90127,367,11
+House,8,MA,D,RepStephenLynch,"LYNCH, Stephen F.",-0.35,0.021,-38.2201,0.89927,360,22
+House,3,NJ,R,RepTomMacArthur,"MacARTHUR, Thomas Charles",0.212,0.275,-33.90802,0.91129,365,18
+House,12,NY,D,RepMaloney,"MALONEY, Carolyn Bosher",-0.384,-0.284,-33.14342,0.90891,347,14
+House,18,NY,D,RepSeanMaloney,"MALONEY, Sean Patrick",-0.227,0.089,-52.33164,0.86643,365,26
+Senate,0,WV,D,Sen_JoeManchin,"MANCHIN, Joe, III",-0.064,0.458,-32.63383,0.82534,170,17
+House,24,TX,R,RepKenMarchant,"MARCHANT, Kenny",0.601,0.163,-28.09248,0.9235,353,10
+House,10,PA,R,RepTomMarino,"MARINO, Thomas A.",0.357,0.496,-22.24893,0.93344,323,8
+Senate,0,MA,D,senmarkey,"MARKEY, Edward John",-0.5,-0.428,-17.08385,0.90385,169,9
+House,1,KS,R,RogerMarshallMD,"MARSHALL, Roger Wayne",0.545,0.177,-17.23404,0.954,366,5
+House,4,KY,R,RepThomasMassie,"MASSIE, Thomas",0.668,-0.744,-119.87413,0.72135,367,46
+House,18,FL,R,RepBrianMast,"MAST, Brian Jeffery",0.319,-0.149,-48.63872,0.87619,368,23
+House,6,CA,D,DorisMatsui,"MATSUI, Doris",-0.435,-0.177,-29.12741,0.92123,355,19
+Senate,0,AZ,R,SenJohnMcCain,"McCAIN, John Sidney, III",0.381,-0.624,-24.70455,0.85267,155,10
+House,23,CA,R,GOPLeader,"MCCARTHY, Kevin",0.462,0.192,-15.70931,0.95776,364,2
+Senate,0,MO,D,clairecmc,"McCASKILL, Claire",-0.147,-0.001,-31.2995,0.82816,166,11
+House,10,TX,R,RepMcCaul,"McCAUL, Michael T.",0.449,0.079,-22.00918,0.94021,357,6
+House,4,CA,R,RepMcClintock,"McCLINTOCK, Tom",0.745,-0.526,-30.72544,0.91948,366,8
+House,4,MN,D,BettyMcCollum04,"McCOLLUM, Betty",-0.421,-0.17,-25.47438,0.93259,365,13
+Senate,0,KY,R,SenateMajLdr,"McCONNELL, Addison Mitchell (Mitch)",0.404,0.003,-7.08978,0.95892,169,2
+House,4,VA,D,RepMcEachin,"MCEACHIN, Aston Donald",-0.491,0.108,-24.04324,0.93343,349,13
+House,2,MA,D,RepMcGovern,"McGOVERN, James P.",-0.536,-0.307,-18.31631,0.95106,365,15
+House,10,NC,R,PatrickMcHenry,"McHENRY, Patrick T.",0.584,0.108,-13.73093,0.96338,368,3
+House,1,WV,R,RepMcKinley,"McKINLEY, David",0.293,0.117,-46.85711,0.87983,366,24
+House,5,WA,R,cathymcmorris,"McMORRIS RODGERS, Cathy",0.427,0.153,-14.82169,0.96052,368,4
+House,9,CA,D,RepMcNerney,"McNERNEY, Jerry",-0.258,-0.132,-27.98112,0.9264,366,11
+House,2,AZ,R,RepMcSally,"McSALLY, Martha",0.328,-0.001,-41.03332,0.89199,359,20
+House,11,NC,R,RepMarkMeadows,"MEADOWS, Mark",0.625,-0.164,-19.76788,0.94657,360,6
+House,7,PA,R,RepMeehan,"MEEHAN, Patrick",0.221,0.074,-40.19575,0.89545,364,19
+House,5,NY,D,GregoryMeeks,"MEEKS, Gregory W.",-0.418,-0.082,-26.97975,0.92436,343,14
+Senate,0,NJ,D,SenatorMenendez,"MENENDEZ, Robert",-0.36,-0.114,-36.7118,0.80371,168,12
+House,6,NY,D,RepGraceMeng,"MENG, Grace",-0.382,-0.137,-25.05376,0.93295,361,9
+Senate,0,OR,D,SenJeffMerkley,"MERKLEY, Jeff",-0.445,-0.76,-19.57353,0.89064,169,10
+House,6,IN,R,RepLukeMesser,"MESSER, Luke",0.561,-0.086,-20.11614,0.94565,360,6
+House,10,MI,R,RepPaulMitchell,"MITCHELL, Paul",0.502,0.129,-19.97514,0.94717,368,7
+House,4,MI,R,RepMoolenaar,"MOOLENAAR, John",0.429,0.484,-17.58333,0.95334,368,9
+House,2,WV,R,RepAlexMooney,"MOONEY, Alex X.",0.569,-0.238,-45.53368,0.88302,366,16
+House,4,WI,D,RepGwenMoore,"MOORE, Gwendolynne S. (Gwen)",-0.529,-0.252,-22.02798,0.93762,342,7
+Senate,0,KS,R,JerryMoran,"MORAN, Jerry",0.412,0.266,-7.50045,0.95556,165,3
+House,6,MA,D,sethmoulton,"MOULTON, Seth",-0.31,-0.053,-33.18206,0.91355,367,13
+House,2,OK,R,RepMullin,"MULLIN, Markwayne",0.491,0.516,-16.99553,0.9545,365,3
+House,5,SC,R,MickMulvaneyOMB,"MULVANEY, Mick",0.75,-0.592,-0.09233,0.9817,5,0
+Senate,0,AK,R,lisamurkowski,"MURKOWSKI, Lisa",0.207,-0.291,-21.4491,0.8774,164,5
+Senate,0,CT,D,ChrisMurphyCT,"MURPHY, Christopher",-0.309,-0.188,-19.78116,0.88892,168,9
+House,7,FL,D,RepStephMurphy,"MURPHY, Stephanie",-0.175,-0.072,-54.59889,0.86,362,21
+House,18,PA,R,RepTimMurphy,"MURPHY, Timothy",0.259,0.195,-27.95236,0.92628,365,13
+Senate,0,WA,D,PattyMurray,"MURRAY, Patty",-0.341,-0.297,-12.21469,0.93067,170,3
+House,10,NY,D,RepJerryNadler,"NADLER, Jerrold Lewis",-0.51,-0.501,-22.43057,0.93843,353,13
+House,32,CA,D,gracenapolitano,"NAPOLITANO, Grace Flores",-0.446,-0.237,-13.68908,0.94148,227,6
+House,1,MA,D,RepRichardNeal,"NEAL, Richard Edmund",-0.416,-0.121,-26.28121,0.92997,362,14
+Senate,0,FL,D,SenBillNelson,"NELSON, Clarence William (Bill)",-0.192,0.341,-26.37693,0.85628,170,8
+House,4,WA,R,RepNewhouse,"NEWHOUSE, Daniel Milton",0.365,0.184,-15.50215,0.95397,329,5
+House,1,SD,R,RepKristiNoem,"NOEM, Kristi",0.386,0.345,-23.82716,0.93681,365,11
+House,8,MN,D,USRepRickNolan,"NOLAN, Richard Michael",-0.371,-0.425,-49.47439,0.8716,360,24
+House,1,NJ,D,DonaldNorcross,"NORCROSS, Donald",-0.382,0.272,-35.55584,0.90718,365,13
+House,5,SC,R,RepRalphNorman,"NORMAN, Ralph",0.752,-0.142,-6.70987,0.9351,100,2
+House,22,CA,R,DevinNunes,"NUNES, Devin",0.453,0.183,-14.5891,0.96039,361,4
+House,1,AZ,D,RepOHalleran,"O'HALLERAN, Thomas C.",-0.15,0.014,-73.37784,0.81833,366,33
+House,16,TX,D,RepBetoORourke,"O'ROURKE, Beto",-0.321,-0.331,-41.04614,0.89308,363,16
+House,22,TX,R,RepPeteOlson,"OLSON, Pete",0.538,0.316,-15.12489,0.95897,361,4
+House,4,MS,R,CongPalazzo,"PALAZZO, Steven",0.497,0.52,-22.42355,0.9401,363,8
+House,6,NJ,D,FrankPallone,"PALLONE, Frank, Jr.",-0.398,-0.168,-24.53717,0.9355,368,17
+House,6,AL,R,USRepGaryPalmer,"PALMER, Gary James",0.776,-0.134,-16.83845,0.95393,357,7
+House,20,CA,D,RepJimmyPanetta,"PANETTA, James Varni",-0.287,-0.259,-35.3583,0.90815,367,14
+House,9,NJ,D,BillPascrell,"PASCRELL, William J., Jr.",-0.365,0.008,-37.01536,0.90177,358,15
+Senate,0,KY,R,RandPaul,"PAUL, Rand",0.878,-0.479,-30.65696,0.83137,166,12
+House,3,MN,R,RepErikPaulsen,"PAULSEN, Erik",0.411,-0.201,-35.75984,0.9074,368,21
+House,10,NJ,D,RepDonaldPayne,"PAYNE, Donald, Jr.",-0.505,-0.151,-16.0304,0.95216,327,5
+House,2,NM,R,RepStevePearce,"PEARCE, Stevan",0.472,0.064,-38.92788,0.89884,365,22
+House,12,CA,D,NancyPelosi,"PELOSI, Nancy",-0.493,-0.203,-18.43658,0.94315,315,13
+Senate,0,GA,R,SenDavidPerdue,"PERDUE, David Alfred, Jr.",0.655,-0.311,-6.46436,0.96247,169,3
+House,7,CO,D,RepPerlmutter,"PERLMUTTER, Ed",-0.286,0.104,-40.27378,0.89218,353,16
+House,4,PA,R,RepScottPerry,"PERRY, Scott",0.649,-0.339,-25.58661,0.9323,365,15
+Senate,0,MI,D,SenGaryPeters,"PETERS, Gary C.",-0.233,-0.213,-28.1519,0.84487,167,8
+House,52,CA,D,RepScottPeters,"PETERS, Scott",-0.177,-0.071,-66.82807,0.83311,366,33
+House,7,MN,D,collinpeterson,"PETERSON, Collin Clark",-0.145,0.715,-111.18866,0.7374,365,48
+House,1,ME,D,chelliepingree,"PINGREE, Chellie",-0.427,-0.388,-21.46726,0.94303,366,8
+House,9,NC,R,reppittenger,"PITTENGER, Robert",0.556,0.297,-19.50798,0.94653,355,15
+House,2,WI,D,repmarkpocan,"POCAN, Mark",-0.553,-0.457,-16.82781,0.95506,366,8
+House,2,TX,R,JudgeTedPoe,"POE, Ted",0.595,-0.03,-52.12991,0.86307,354,26
+House,2,ME,R,RepPoliquin,"POLIQUIN, Bruce Lee",0.374,-0.258,-40.76876,0.89377,363,20
+House,2,CO,D,RepJaredPolis,"POLIS, Jared",-0.281,-0.686,-31.80533,0.91633,364,11
+House,4,KS,R,,"POMPEO, Mike",0.66,0.164,-5.00E-05,0.99995,1,0
+Senate,0,OH,R,SenRobPortman,"PORTMAN, Robert Jones (Rob)",0.375,-0.258,-14.20313,0.91939,169,5
+House,8,FL,R,congbillposey,"POSEY, Bill",0.508,-0.311,-36.76819,0.90442,366,14
+House,4,NC,D,RepDavidEPrice,"PRICE, David Eugene",-0.339,-0.03,-25.56097,0.93164,361,14
+House,6,GA,R,RepTomPrice,"PRICE, Tom",0.644,-0.073,-0.02153,0.98929,2,0
+House,5,IL,D,RepMikeQuigley,"QUIGLEY, Mike",-0.318,-0.309,-19.0818,0.94795,357,8
+House,8,MD,D,RepRaskin,"RASKIN, Jamie Ben",-0.555,-0.064,-17.54061,0.95308,365,7
+House,4,TX,R,RepRatcliffe,"RATCLIFFE, John",0.743,0.11,-25.81739,0.93153,364,18
+Senate,0,RI,D,SenJackReed,"REED, John F. (Jack)",-0.39,-0.254,-16.56225,0.90717,170,7
+House,23,NY,R,RepTomReed,"REED, Thomas W. II",0.301,0.083,-28.61016,0.92381,361,16
+House,8,WA,R,davereichert,"REICHERT, David G.",0.222,-0.171,-55.80111,0.85454,355,24
+House,16,OH,R,RepJimRenacci,"RENACCI, Jim",0.381,0.128,-34.28345,0.90592,347,17
+House,4,NY,D,RepKathleenRice,"RICE, Kathleen Maura",-0.283,-0.083,-37.3425,0.90275,365,20
+House,7,SC,R,RepTomRice,"RICE, Tom",0.58,-0.275,-23.5141,0.93591,355,12
+House,2,LA,D,RepRichmond,"RICHMOND, Cedric",-0.469,0.32,-36.20834,0.89457,325,17
+Senate,0,ID,R,SenatorRisch,"RISCH, James",0.631,0.575,-2.77537,0.98381,170,1
+Senate,0,KS,R,SenPatRoberts,"ROBERTS, Charles Patrick (Pat)",0.415,-0.096,-2.83481,0.98346,170,1
+House,2,AL,R,RepMarthaRoby,"ROBY, Martha",0.361,0.669,-13.33245,0.96442,368,2
+House,1,TN,R,DrPhilRoe,"ROE, David P. (Phil)",0.494,-0.005,-17.34288,0.9536,365,9
+House,5,KY,R,RepHalRogers,"ROGERS, Harold Dallas (Hal)",0.332,0.086,-17.88559,0.95218,365,3
+House,3,AL,R,RepMikeRogersAL,"ROGERS, Mike Dennis",0.336,0.439,-29.14955,0.92159,357,14
+House,48,CA,R,DanaRohrabacher,"ROHRABACHER, Dana",0.628,-0.401,-47.38991,0.87437,353,16
+House,4,IN,R,ToddRokita,"ROKITA, Todd",0.593,-0.16,-29.4651,0.92224,364,16
+House,19,FL,R,RepRooney,"ROONEY, Francis",0.618,0.08,-10.87314,0.97081,367,1
+House,17,FL,R,TomRooney,"ROONEY, Thomas J.",0.468,0.013,-20.59138,0.94206,345,5
+House,27,FL,R,RosLehtinen,"ROS-LEHTINEN, Ileana",0.245,-0.228,-95.59153,0.7668,360,50
+House,3,NV,D,RepJackyRosen,"ROSEN, Jacklyn Sheryl",-0.221,0.113,-53.8334,0.86322,366,27
+House,6,IL,R,PeterRoskam,"ROSKAM, Peter",0.439,0.03,-20.92681,0.94164,348,10
+House,15,FL,R,RepDennisRoss,"ROSS, Dennis",0.534,0.083,-14.66061,0.96063,365,6
+House,12,PA,R,KeithRothfus,"ROTHFUS, Keith",0.501,0.122,-14.22015,0.9621,368,4
+Senate,0,SD,R,SenatorRounds,"ROUNDS, Marion Michael (Mike)",0.382,0.037,-2.19141,0.98719,170,0
+House,7,NC,R,RepDavidRouzer,"ROUZER, David",0.618,0.146,-20.30521,0.94589,365,14
+House,40,CA,D,RepRoybalAllard,"ROYBAL-ALLARD, Lucille",-0.47,-0.202,-28.29972,0.9252,364,16
+House,39,CA,R,RepEdRoyce,"ROYCE, Edward Randall",0.666,-0.367,-28.54256,0.92458,364,8
+Senate,0,FL,R,marcorubio,"RUBIO, Marco",0.589,-0.325,-8.35915,0.95174,169,4
+House,36,CA,D,CongressmanRuiz,"RUIZ, Raul",-0.233,0.051,-43.97525,0.88708,367,22
+House,2,MD,D,Call_Me_Dutch,"RUPPERSBERGER, C. A. (Dutch)",-0.299,0.154,-41.13786,0.89341,365,20
+House,1,IL,D,RepBobbyRush,"RUSH, Bobby L.",-0.479,-0.211,-30.72171,0.87342,227,15
+House,5,OK,R,RepRussell,"RUSSELL, Steve",0.443,-0.174,-77.22202,0.80597,358,23
+House,4,FL,R,RepRutherfordFL,"RUTHERFORD, John Henry",0.376,0.603,-13.27189,0.96194,342,6
+House,1,WI,R,SpeakerRyan,"RYAN, Paul D.",0.556,-0.252,-1.29895,0.72272,4,1
+House,13,OH,D,RepTimRyan,"RYAN, Timothy J.",-0.401,0.212,-26.00281,0.92288,324,10
+Senate,0,VT,D,SenSanders,"SANDERS, Bernard",-0.513,-0.308,-20.37254,0.88318,164,10
+House,1,SC,R,RepSanfordSC,"SANFORD, Mark",0.697,-0.717,-69.78188,0.81346,338,38
+House,3,MD,D,RepSarbanes,"SARBANES, John",-0.46,-0.106,-22.08213,0.94145,366,9
+Senate,0,NE,R,SenSasse,"SASSE, Benjamin Eric",0.833,-0.402,-12.76789,0.92597,166,5
+House,1,LA,R,SteveScalise,"SCALISE, Steve",0.56,0.127,-7.42994,0.97106,253,2
+House,9,IL,D,janschakowsky,"SCHAKOWSKY, Janice D.",-0.604,-0.276,-15.25035,0.95875,362,6
+Senate,0,HI,D,brianschatz,"SCHATZ, Brian Emanuel",-0.395,-0.119,-27.28154,0.85011,168,10
+House,28,CA,D,RepAdamSchiff,"SCHIFF, Adam",-0.346,-0.13,-22.37988,0.94068,366,9
+House,10,IL,D,RepSchneider,"SCHNEIDER, Brad",-0.184,-0.225,-47.96591,0.8778,368,24
+House,5,OR,D,RepSchrader,"SCHRADER, Kurt",-0.189,0.039,-101.16904,0.7452,344,44
+Senate,0,NY,D,SenSchumer,"SCHUMER, Charles Ellis (Chuck)",-0.35,-0.404,-16.70123,0.90643,170,8
+House,6,AZ,R,RepDavid,"SCHWEIKERT, David",0.636,-0.327,-26.30897,0.93082,367,9
+House,8,GA,R,AustinScottGA08,"SCOTT, Austin",0.588,0.196,-20.45623,0.94593,368,6
+House,13,GA,D,repdavidscott,"SCOTT, David",-0.304,0.177,-35.93577,0.90269,351,21
+House,3,VA,D,BobbyScott,"SCOTT, Robert C.",-0.454,0.021,-41.84,0.89253,368,24
+Senate,0,SC,R,SenatorTimScott,"SCOTT, Tim",0.669,-0.011,-2.36931,0.98616,170,0
+House,5,WI,R,,"SENSENBRENNER, Frank James, Jr.",0.646,-0.625,-36.22616,0.90601,367,9
+House,15,NY,D,RepJoseSerrano,"SERRANO, Josê© E.",-0.488,-0.397,-25.50829,0.93303,368,11
+Senate,0,AL,R,,"SESSIONS, Jefferson Beauregard III (Jeff)",0.549,0.13,-0.56654,0.97062,19,0
+House,32,TX,R,PeteSessions,"SESSIONS, Pete",0.587,0.17,-14.1554,0.96175,363,5
+House,7,AL,D,repterrisewell,"SEWELL, Terri",-0.393,0.408,-28.84797,0.9234,362,9
+Senate,0,NH,D,SenatorShaheen,"SHAHEEN, Jeanne",-0.272,-0.343,-14.05439,0.92065,170,6
+House,1,NH,D,RepSheaPorter,"SHEA-PORTER, Carol",-0.316,-0.102,-32.67041,0.9137,362,14
+Senate,0,AL,R,SenShelby,"SHELBY, Richard C.",0.433,0.542,-1.80295,0.98939,169,0
+House,30,CA,D,BradSherman,"SHERMAN, Brad",-0.344,-0.15,-27.33098,0.92766,364,13
+House,15,IL,R,RepShimkus,"SHIMKUS, John M.",0.373,0.133,-18.55994,0.95082,368,5
+House,9,PA,R,RepBillShuster,"SHUSTER, William (Bill)",0.376,0.323,-25.85657,0.92994,356,10
+House,2,ID,R,CongMikeSimpson,"SIMPSON, Michael K.",0.294,0.275,-17.52372,0.95197,356,7
+House,9,AZ,D,RepSinema,"SINEMA, Kyrsten",-0.11,0.043,-102.53525,0.737,336,48
+House,8,NJ,D,RepSires,"SIRES, Albio",-0.398,0.086,-38.99942,0.8976,361,12
+House,25,NY,D,louiseslaughter,"SLAUGHTER, Louise McIntosh",-0.464,-0.11,-14.07015,0.95477,304,3
+House,9,WA,D,RepAdamSmith,"SMITH, Adam",-0.281,-0.135,-47.87542,0.87515,359,15
+House,3,NE,R,RepAdrianSmith,"SMITH, Adrian",0.508,0.188,-18.84884,0.94954,364,5
+House,4,NJ,R,RepChrisSmith,"SMITH, Christopher Henry",0.159,-0.175,-92.18067,0.77682,365,29
+House,8,MO,R,RepJasonSmith,"SMITH, Jason",0.605,0.169,-21.02125,0.94374,363,12
+House,21,TX,R,LamarSmithTX21,"SMITH, Lamar Seeligson",0.423,0.059,-18.25548,0.94918,350,4
+House,16,PA,R,RepSmucker,"SMUCKER, Lloyd K.",0.286,0.469,-23.24135,0.93864,367,5
+House,38,CA,D,RepLindaSanchez,"SêÅNCHEZ, Linda T.",-0.504,-0.168,-17.55549,0.9524,360,8
+House,9,FL,D,RepDarrenSoto,"SOTO, Darren Michael",-0.333,0.04,-27.92259,0.92674,367,12
+House,14,CA,D,RepSpeier,"SPEIER, Karen Lorraine Jacqueline (Jackie)",-0.387,-0.445,-25.15506,0.93215,358,9
+Senate,0,MI,D,SenStabenow,"STABENOW, Deborah Ann",-0.327,0.017,-20.38921,0.88571,168,9
+House,21,NY,R,RepStefanik,"STEFANIK, Elise M",0.214,0.049,-43.29865,0.889,368,12
+House,2,UT,R,RepChrisStewart,"STEWART, Chris",0.519,0.122,-14.07177,0.96156,359,4
+House,15,OH,R,RepSteveStivers,"STIVERS, Steve",0.304,0.244,-22.80482,0.93692,350,15
+Senate,0,AL,R,lutherstrange,"STRANGE, Luther  Johnson, III",0.659,0.254,-1.12873,0.98988,111,0
+Senate,0,AK,R,SenDanSullivan,"SULLIVAN, Daniel Scott",0.463,0.138,-5.52268,0.96728,166,2
+House,3,NY,D,RepTomSuozzi,"SUOZZI, Thomas",-0.201,-0.013,-65.81474,0.8325,359,29
+House,15,CA,D,RepSwalwell,"SWALWELL, Eric",-0.359,-0.1,-37.17302,0.89978,352,22
+House,41,CA,D,RepMarkTakano,"TAKANO, Mark",-0.477,-0.186,-22.63861,0.93771,352,13
+House,2,VA,R,RepScottTaylor,"TAYLOR, Scott William",0.446,0.069,-17.08955,0.95313,356,5
+House,22,NY,R,claudiatenney,"TENNEY, Claudia",0.258,0.45,-19.99443,0.94669,365,11
+Senate,0,MT,D,SenatorTester,"TESTER, Jon",-0.214,0.171,-24.17724,0.86743,170,9
+House,2,MS,D,BennieGThompson,"THOMPSON, Bennie",-0.514,0.404,-24.06651,0.93568,362,8
+House,5,PA,R,CongressmanGT,"THOMPSON, Glenn",0.309,0.357,-24.24906,0.93589,366,17
+House,5,CA,D,RepThompson,"THOMPSON, Michael",-0.395,0.063,-35.68871,0.90757,368,15
+House,13,TX,R,MacThornberry,"THORNBERRY, William McClellan (Mac)",0.53,0.306,-15.00037,0.96006,368,5
+Senate,0,SD,R,SenJohnThune,"THUNE, John",0.409,0.126,-3.76929,0.97807,170,2
+House,12,OH,R,PatTiberi,"TIBERI, Patrick (Pat)",0.388,-0.033,-27.95138,0.92428,355,13
+Senate,0,NC,R,SenThomTillis,"TILLIS, Thomas Roland (Thom)",0.44,-0.045,-1.47748,0.99098,163,0
+House,3,CO,R,RepTipton,"TIPTON, Scott",0.462,-0.041,-35.33922,0.90748,364,19
+House,1,NV,D,repdinatitus,"TITUS, Alice (Dina)",-0.296,-0.18,-23.04786,0.93254,330,8
+House,20,NY,D,RepPaulTonko,"TONKO, Paul",-0.421,-0.266,-14.61948,0.95932,352,2
+Senate,0,PA,R,SenToomey,"TOOMEY, Patrick Joseph",0.629,-0.29,-5.26405,0.9686,165,2
+House,35,CA,D,NormaJTorres,"TORRES, Norma Judith",-0.366,0.032,-26.29677,0.92993,362,13
+House,11,MI,R,repdavetrott,"TROTT, David A.",0.373,0.303,-16.99334,0.95427,363,4
+House,3,MA,D,nikiinthehouse,"TSONGAS, Nicola S. (Niki)",-0.4,-0.182,-22.82667,0.93755,354,11
+House,10,OH,R,RepMikeTurner,"TURNER, Michael R.",0.267,0.169,-32.36956,0.91536,366,19
+Senate,0,NM,D,SenatorTomUdall,"UDALL, Thomas (Tom)",-0.455,0.182,-31.55786,0.82687,166,16
+House,6,MI,R,RepFredUpton,"UPTON, Frederick Stephen",0.339,-0.412,-54.05521,0.86339,368,24
+House,21,CA,R,RepDavidValadao,"VALADAO, David G.",0.256,0.353,-22.36809,0.93992,361,14
+Senate,0,MD,D,ChrisVanHollen,"VAN HOLLEN, Christopher",-0.4,-0.176,-13.15074,0.92556,170,4
+House,51,CA,D,RepJuanVargas,"VARGAS, Juan",-0.384,0.114,-30.0796,0.92089,365,10
+House,33,TX,D,RepVeasey,"VEASEY, Marc",-0.412,0.307,-50.24992,0.87204,367,18
+House,34,TX,D,RepFilemonVela,"VELA, Filemon",-0.306,0.431,-68.07808,0.82942,364,31
+House,7,NY,D,NydiaVelazquez,"VELêÅZQUEZ, Nydia M.",-0.545,-0.355,-28.18655,0.92489,361,17
+House,1,IN,D,RepVisclosky,"VISCLOSKY, Peter",-0.402,0.249,-35.12931,0.90603,356,11
+House,2,MO,R,RepAnnWagner,"WAGNER, Ann",0.458,0.218,-14.42486,0.95996,353,5
+House,7,MI,R,RepWalberg,"WALBERG, Tim",0.529,0.025,-24.18281,0.93623,367,17
+House,2,OR,R,repgregwalden,"WALDEN, Greg",0.341,-0.045,-22.72037,0.93965,365,10
+House,6,NC,R,RepMarkWalker,"WALKER, Bradley Mark",0.607,-0.009,-17.71218,0.9512,354,7
+House,2,IN,R,RepWalorski,"WALORSKI, Jackie",0.432,0.377,-13.24334,0.96417,363,5
+House,45,CA,R,RepMimiWalters,"WALTERS, Mimi",0.393,0.228,-15.2969,0.95928,368,3
+House,1,MN,D,RepTimWalz,"WALZ, Tim",-0.273,0.14,-45.17954,0.88297,363,19
+Senate,0,VA,D,MarkWarner,"WARNER, Mark",-0.196,-0.024,-27.43632,0.84766,166,12
+Senate,0,MA,D,SenWarren,"WARREN, Elizabeth",-0.75,-0.296,-6.43903,0.96283,170,3
+House,23,FL,D,DWStweets,"WASSERMAN SCHULTZ, Debbie",-0.432,0.095,-25.92898,0.92975,356,19
+House,43,CA,D,RepMaxineWaters,"WATERS, Maxine",-0.66,-0.082,-24.64728,0.93274,354,10
+House,12,NJ,D,RepBonnie,"WATSON COLEMAN, Bonnie",-0.592,-0.282,-27.57982,0.92722,365,11
+House,14,TX,R,TXRandy14,"WEBER, Randy",0.713,0.041,-24.07579,0.93443,355,17
+House,11,FL,R,RepWebster,"WEBSTER, Daniel A.",0.471,0.016,-22.01708,0.94051,359,10
+House,1,VT,D,PeterWelch,"WELCH, Peter",-0.41,-0.323,-25.05716,0.93185,355,9
+House,2,OH,R,RepBradWenstrup,"WENSTRUP, Brad",0.577,0.179,-15.60123,0.95827,366,6
+House,4,AR,R,RepWesterman,"WESTERMAN, Bruce Eugene",0.531,0.387,-15.19576,0.95944,367,5
+Senate,0,RI,D,SenWhitehouse,"WHITEHOUSE, Sheldon",-0.424,-0.255,-15.05029,0.91527,170,5
+Senate,0,MS,R,SenatorWicker,"WICKER, Roger F.",0.376,0.365,-8.90909,0.94865,169,2
+House,25,TX,R,RepRWilliams,"WILLIAMS, Roger",0.606,0.169,-11.88414,0.96788,364,2
+House,2,SC,R,RepJoeWilson,"WILSON, Addison Graves (Joe)",0.548,0.09,-12.70434,0.96579,365,3
+House,24,FL,D,RepWilson,"WILSON, Frederica",-0.476,-0.009,-16.60669,0.95366,350,6
+House,1,VA,R,RobWittman,"WITTMAN, Robert J.",0.413,-0.02,-30.39334,0.91925,361,14
+House,3,AR,R,rep_stevewomack,"WOMACK, Steve",0.332,0.594,-16.82525,0.95531,368,4
+House,7,GA,R,RepRobWoodall,"WOODALL, Rob",0.651,-0.291,-35.67577,0.90639,363,21
+Senate,0,OR,D,RonWyden,"WYDEN, Ronald Lee",-0.314,-0.406,-26.87703,0.85297,169,11
+House,3,KY,D,RepJohnYarmuth,"YARMUTH, John",-0.379,-0.245,-20.48551,0.94528,364,6
+House,3,KS,R,RepKevinYoder,"YODER, Kevin",0.563,0.002,-33.03465,0.91392,367,23
+House,3,FL,R,RepTedYoho,"YOHO, Ted",0.698,-0.444,-24.0552,0.93588,363,9
+House,3,IA,R,RepDavidYoung,"YOUNG, David",0.435,-0.045,-42.91946,0.88992,368,14
+House,1,AK,R,repdonyoung,"YOUNG, Donald Edwin",0.278,0.006,-66.43042,0.82977,356,26
+Senate,0,IN,R,SenToddYoung,"YOUNG, Todd",0.489,0.058,-14.37689,0.91891,170,3
+House,1,NY,R,RepLeeZeldin,"ZELDIN, Lee M",0.338,-0.069,-26.38718,0.93044,366,7
+House,1,MT,R,RepRyanZinke,"ZINKE, Ryan",0.412,-0.097,-0.05424,0.99699,18,0
