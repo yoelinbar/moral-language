@@ -18,14 +18,15 @@ library(ggplot2)
 
 # Utility functions
 here <- here::here
-source( here('Analysis Code', 'utils.R') )
+
+source( here('scripts', 'utils.R') )
 
 ### PREPROCESSING ###
-tweets <- read.csv( here('Congress Tweets', 'AllCongressTweets.csv') )
+tweets <- read.csv( here('data', 'AllCongressTweets.csv') )
 
 # Merge DW-NOMINATE w/ tweet file
-dwnominate115 <- read.csv( here('Congress Tweets', 'DWNOMINATE-115.csv') )
-dwnominate114 <- read.csv( here('Congress Tweets', 'DWNOMINATE-114.csv') )
+dwnominate115 <- read.csv( here('data', 'DWNOMINATE-115.csv') )
+dwnominate114 <- read.csv( here('data', 'DWNOMINATE-114.csv') )
 
 # Code which Congress(es) they were in
 dwnominate115$C115 <- TRUE
@@ -57,7 +58,7 @@ dwnominate$partyd <- as.numeric(dwnominate$Party == "Democratic")
 tweets <- merge(tweets,dwnominate, by.x="author", by.y = "twitter_handle", all.x=TRUE)
 
 # Read in DDR output file
-loadings <- read.table(file = here('DDR', 'document_dictionary_loadings.tsv'), sep = '\t', header = TRUE)
+loadings <- read.table(file = here('data', 'document_dictionary_loadings.tsv'), sep = '\t', header = TRUE)
 colnames(loadings) <- c("generated_id", "Loyaltyvirtue", "Authorityvice", "Loyaltyvice", 
 						"Fairnessvice", "Carevirtue", "Authorityvirtue", "Purityvice",
                         "Purityvirtue", "Carevice", "Fairnessvirtue")
@@ -66,7 +67,7 @@ colnames(loadings) <- c("generated_id", "Loyaltyvirtue", "Authorityvice", "Loyal
 tweets <- merge(loadings,tweets,by="generated_id", all=TRUE)
 
 # Tweet metrics (likes and RTs)
-metrics <- read.csv(file = here('Congress Tweets', 'tweet_metrics.csv') )
+metrics <- read.csv(file = here('data', 'tweet_metrics.csv') )
 tweets <- merge(tweets, metrics, by="generated_id", all.x=TRUE)
 
 # Log- transform retweets/likes
@@ -74,7 +75,7 @@ tweets$retweets_T <- log(tweets$retweets + 1)
 tweets$favorites_T <- log(tweets$favorites + 1)
 
 # Author metadata (followers, tweet count, account creation date)
-author_metrics <- read.csv(file = here('Congress Tweets', 'author_metrics.csv') )
+author_metrics <- read.csv(file = here('data', 'author_metrics.csv') )
 tweets <- merge(tweets, author_metrics, by="author", all.x=TRUE)
 
 ### CREATE DATES AND ELECTION VARIABLE ###
@@ -237,14 +238,5 @@ for (i in foundations)  {
 }
 
 ### PLOTS ###
-source( here('Analysis Code', 'plots.R') )
+source( here('scripts', 'plots.R') )
 
-### EXPORT FOR STATA ###
-write.table(tweets[, !names(tweets) %in% c("tweet_cleaned", "tweet_raw", "bioname")], 
-            here('Congress Tweets', 'tweets-stata.csv'),
-            na = "",
-            row.names = FALSE,
-            col.names = TRUE,
-            append = FALSE,
-            sep = ","
-            )

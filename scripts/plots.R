@@ -1,5 +1,5 @@
 # Separate data file for retweet plot (from Stata)
-retweets <- read.csv( here('Congress Tweets', 'RetweetPlot.csv') )
+retweets <- read.csv( here('data', 'RetweetPlot.csv') )
 
 ### SCATTERPLOT BY SPEAKER ###
 # Calculate speaker means
