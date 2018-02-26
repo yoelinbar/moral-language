@@ -25,7 +25,7 @@ here <- here::here
 source( here('scripts', 'utils.R') )
 
 ### PREPROCESSING ###
-tweets <- read.csv( here('data', 'AllCongressTweets.csv') ))
+tweets <- read.csv( here('data', 'AllCongressTweets.csv') )
 
 # Merge DW-NOMINATE w/ tweet file
 dwnominate115 <- read.csv( here('data', 'DWNOMINATE-115.csv') )
