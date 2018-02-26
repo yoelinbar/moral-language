@@ -25,9 +25,7 @@ here <- here::here
 source( here('scripts', 'utils.R') )
 
 ### PREPROCESSING ###
-# File too large for GitHub, must be loaded from Dataverse
-# For some reason Dataverse thinks it should be a .tsv
-tweets <- read.table("https://dataverse.harvard.edu/api/access/datafile/3128463", sep = '\t', header = TRUE)
+tweets <- read.csv( here('data', 'AllCongressTweets.csv') ))
 
 # Merge DW-NOMINATE w/ tweet file
 dwnominate115 <- read.csv( here('data', 'DWNOMINATE-115.csv') )
