@@ -241,6 +241,3 @@ for (i in foundations)  {
   print( summary(model) )
 }
 
-### PLOTS ###
-source( here('scripts', 'plots.R') )
-
