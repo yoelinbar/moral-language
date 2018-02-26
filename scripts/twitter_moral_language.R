@@ -91,9 +91,6 @@ tweets$posixdate <- as.POSIXct(tweets$date, tz="GMT")
 # 2016 Election Day: 11-08
 tweets$election <- ifelse( tweets$posixdate<as.POSIXct("2016-11-09 00:00", tz="GMT"), 'pre', 'post' ) 
 
-# limit to 2016 onwards
-tweets <- tweets[tweets$posixdate >= as.POSIXct("2016-01-01 00:00"),]
-
 # For time series analysis
 # Days from beginning of sample
 tweets$totaldays <- as.numeric( as.Date(tweets$posixdate) - as.Date( min(tweets$posixdate) ) )
