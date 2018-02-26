@@ -1,3 +1,6 @@
+### WARNING: THIS WILL DOWNLOAD ABOUT 200 MB OF DATA (SOME FILES TOO LARGE FOR GITHUB). 
+### DO NOT RUN ON METERED CONNECTIONS.
+
 ### REQUIREMENTS ###
 library(here)
 
@@ -22,7 +25,8 @@ here <- here::here
 source( here('scripts', 'utils.R') )
 
 ### PREPROCESSING ###
-tweets <- read.csv( here('data', 'AllCongressTweets.csv') )
+# File too large for GitHub, must be loaded from Dataverse
+tweets <- read.csv("https://dataverse.harvard.edu/api/access/datafile/3128460")
 
 # Merge DW-NOMINATE w/ tweet file
 dwnominate115 <- read.csv( here('data', 'DWNOMINATE-115.csv') )
@@ -58,7 +62,7 @@ dwnominate$partyd <- as.numeric(dwnominate$Party == "Democratic")
 tweets <- merge(tweets,dwnominate, by.x="author", by.y = "twitter_handle", all.x=TRUE)
 
 # Read in DDR output file
-loadings <- read.table(file = here('data', 'document_dictionary_loadings.tsv'), sep = '\t', header = TRUE)
+loadings <- read.table("https://dataverse.harvard.edu/api/access/datafile/3128461", sep = '\t', header = TRUE)
 colnames(loadings) <- c("generated_id", "Loyaltyvirtue", "Authorityvice", "Loyaltyvice", 
 						"Fairnessvice", "Carevirtue", "Authorityvirtue", "Purityvice",
                         "Purityvirtue", "Carevice", "Fairnessvirtue")
