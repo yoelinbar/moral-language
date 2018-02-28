@@ -89,7 +89,7 @@ dwnominateplotted <- ggplot(dwnominateplot, aes(x=dim1, y=loading))
 print( dwnominateplotted + geom_point(size=0.5, alpha=0.5, aes(colour=dim1)) + 
          scale_colour_gradient(low="royalblue4", high="#9E2E2E", breaks=c(-.746, .919), labels=c("Liberal", "Conservative")) +
          labs(y="Mean Loading") + ggtitle("Post- vs. Pre-Election") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
-         geom_smooth(method="lm", se=TRUE, level=.95, alpha=.70, size=0.5, colour="gray11", fill="gray50") + 
+         geom_smooth(method="lm", level=.95, alpha=.70, size=0.5, colour="gray11", fill="gray50") + 
          facet_grid(election~foundation) + theme(panel.spacing.y=unit(3, "lines")) +
          scale_x_continuous(name="DW-NOMINATE (Voting record)") + labs(colour="Ideology")
 )
@@ -98,7 +98,7 @@ print( dwnominateplotted + geom_point(size=0.5, alpha=0.5, aes(colour=dim1)) +
 print( dwnominateplotted + geom_point(size=0.5, alpha=0.5, aes(colour=dim1)) + 
          scale_colour_gradient(low="royalblue4", high="#9E2E2E", breaks=c(-.746, .919), labels=c("Liberal", "Conservative")) +
          labs(y="Mean Loading") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
-         geom_smooth(method="lm", se=TRUE, level=.95, alpha=.70, size=0.5, colour="gray11", fill="gray50") + 
+         geom_smooth(method="lm", formula = y ~ poly(x, 2), se=TRUE, level=.95, alpha=.70, size=0.5, colour="gray11", fill="gray50") + 
          facet_grid(~foundation) + theme(panel.spacing.y=unit(3, "lines")) +
          scale_x_continuous(name="DW-NOMINATE (Voting record)") + labs(colour="Ideology")
 )
