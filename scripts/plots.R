@@ -35,7 +35,7 @@ scatterplotdata$numericfoundation <- jitter(scatterplotdata$numericfoundation)
 
 # Scatterplot with overlaid box
 scatterplot <- ggplot(scatterplotdata, aes(x=foundation, y=v_mean, color=Party)) + 
-  geom_jitter(aes(shape=Party, colour=Party)) + geom_boxplot(outlier.size=NA, alpha=0.5)
+  geom_jitter(aes(shape=Party, colour=Party)) + geom_boxplot(outlier.shape=NA, alpha=0.5)
 
 print( scatterplot + theme_bw() +
          scale_colour_manual(values=c("royalblue4","#9E2E2E")) + 
@@ -63,7 +63,7 @@ print( ggplot(by_day, aes(x=totaldays, y=loading)) + geom_point(alpha = 0.5, sha
   
 ### RETWEET PLOT ###
 # Change category order
-plotorder <- c("CareVirtue", "FairnessVirtue", "AuthorityVirtue", "LoyaltyVirtue", "SanctityVirtue", "CareVice", "FairnessVice", "AuthorityVice", "LoyaltyVice", "SanctityVice")
+plotorder <- c("Care-virtue", "Fairness-virtue", "Authority-virtue", "Loyalty-virtue", "Purity-virtue", "Care-vice", "Fairness-vice", "Authority-vice", "Loyalty-vice", "Purity-vice")
 retweets <- arrange(transform(retweets, Category=factor(Category,levels=plotorder)),Category)
 
 retweetplot <- ggplot(retweets, aes(x=Similarity, y=Margin, geom=Affiliation))

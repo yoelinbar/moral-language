@@ -1,8 +1,6 @@
-### WARNING: THIS WILL DOWNLOAD ABOUT 200 MB OF DATA (ONE FILE IS TOO LARGE FOR GITHUB). 
-### THIS FILE CAN BE DOWNLOADED MANUALLY FROM http://dx.doi.org/10.7910/DVN/SINBQH
-
 ### REQUIREMENTS ###
 library(here)
+library(data.table)
 
 # Data processing
 library(reshape2)
@@ -14,6 +12,7 @@ library(dplyr)
 library(lme4)
 library(lmerTest)
 library(nlme)
+library(splines)
 
 # Plotting
 library(ggplot2)
@@ -21,15 +20,14 @@ library(ggplot2)
 
 # Utility functions
 here <- here::here
-
-source( here('scripts', 'utils.R') )
+source( here('Analysis Code', 'utils.R') )
 
 ### PREPROCESSING ###
-tweets <- read.csv( here('data', 'AllCongressTweets.csv') )
+tweets <- fread( here('Congress Tweets', 'AllCongressTweets.csv'), data.table = FALSE )
 
 # Merge DW-NOMINATE w/ tweet file
-dwnominate115 <- read.csv( here('data', 'DWNOMINATE-115.csv') )
-dwnominate114 <- read.csv( here('data', 'DWNOMINATE-114.csv') )
+dwnominate115 <- fread( here('Congress Tweets', 'DWNOMINATE-115.csv'), data.table = FALSE  )
+dwnominate114 <- fread( here('Congress Tweets', 'DWNOMINATE-114.csv'), data.table = FALSE  )
 
 # Code which Congress(es) they were in
 dwnominate115$C115 <- TRUE
@@ -58,28 +56,20 @@ dwnominate$Party <- ifelse(dwnominate$affiliation == "D", "Democratic", "Republi
 dwnominate$partyd <- as.numeric(dwnominate$Party == "Democratic")
 
 # Join on twitter handle
-tweets <- merge(tweets,dwnominate, by.x="author", by.y = "twitter_handle", all.x=TRUE)
+tweets <- merge(tweets,dwnominate, by.x="author", by.y = "twitter_handle", all = FALSE)
 
 # Read in DDR output file
-loadings <- read.table("https://dataverse.harvard.edu/api/access/datafile/3128461", sep = '\t', header = TRUE)
+loadings <- fread( here('DDR', 'document_dictionary_loadings.tsv'), sep = '\t', header = TRUE, data.table = FALSE )
 colnames(loadings) <- c("generated_id", "Loyaltyvirtue", "Authorityvice", "Loyaltyvice", 
 						"Fairnessvice", "Carevirtue", "Authorityvirtue", "Purityvice",
                         "Purityvirtue", "Carevice", "Fairnessvirtue")
                         
 # Merge
-tweets <- merge(loadings,tweets,by="generated_id", all=TRUE)
-
-# Tweet metrics (likes and RTs)
-metrics <- read.csv(file = here('data', 'tweet_metrics.csv') )
-tweets <- merge(tweets, metrics, by="generated_id", all.x=TRUE)
+tweets <- merge(loadings,tweets,by="generated_id", all.x = FALSE, all.y = TRUE)
 
 # Log- transform retweets/likes
 tweets$retweets_T <- log(tweets$retweets + 1)
 tweets$favorites_T <- log(tweets$favorites + 1)
-
-# Author metadata (followers, tweet count, account creation date)
-author_metrics <- read.csv(file = here('data', 'author_metrics.csv') )
-tweets <- merge(tweets, author_metrics, by="author", all.x=TRUE)
 
 ### CREATE DATES AND ELECTION VARIABLE ###
 
@@ -89,9 +79,12 @@ tweets$posixdate <- as.POSIXct(tweets$date, tz="GMT")
 # 2016 Election Day: 11-08
 tweets$election <- ifelse( tweets$posixdate<as.POSIXct("2016-11-09 00:00", tz="GMT"), 'pre', 'post' ) 
 
+# limit to 2016 onwards
+tweets <- tweets[tweets$posixdate >= as.POSIXct("2016-01-01 00:00"),]
+
 # For time series analysis
 # Days from beginning of sample
-tweets$totaldays <- as.numeric( as.Date(tweets$posixdate) - as.Date( min(tweets$posixdate) ) )
+tweets$totaldays <- as.numeric( as.Date(tweets$posixdate) ) - as.numeric( as.Date( min(tweets$posixdate) ) )
 
 # Dummy variable election
 tweets$electiond <- as.numeric(tweets$election == "post")
@@ -103,26 +96,16 @@ tweets$days_post_election <- ifelse( tweets$electiond==1, tweets$totaldays - 312
 
 # remove tweets from people when not in office (e.g. resigned or who took office in a special election)
 # convert entry/exit dates to POSIX
-tweets$posixdate.enter<-as.POSIXct(tweets$date.enter, "%m/%d/%y", tz="GMT")
-
-# Date guessing algorithm thinks Conyers was sworn in in 2065 :-P
-tweets$posixdate.enter[tweets$date.enter=='1/3/65']<-as.POSIXct("1965-01-03", tz="GMT")
+tweets$posixdate.enter<-as.POSIXct(tweets$date.enter, tz="GMT")
 
 # Just in case we have blanks here
 tweets$date.exit[tweets$date.exit==''] <- NA
-tweets$posixdate.exit<-as.POSIXct(tweets$date.exit, "%m/%d/%y", tz="GMT")
+tweets$posixdate.exit<-as.POSIXct(tweets$date.exit, tz="GMT")
 
 # Only tweets after taking office
 tweets<-subset(tweets, posixdate>=posixdate.enter)
 # We'll have NAs for people still in office
 tweets<-subset(tweets, is.na(posixdate.exit) | posixdate<=posixdate.exit)
-
-# Remove press accounts, RepJenniffer (most tweets in Spanish)
-tweets <- tweets[!(tweets$author %in% c("SenMurphyOffice", "RepJenniffer", "InhofePress", "JimPressOffice", "MacTXPress", "McConnellPress", 
-                                        "SenKaineOffice", "teammoulton")),]
-
-# We have some Tweets from people in the 113th but not subsequent Congresses. Affiliation will be na for them.
-tweets <- tweets[!is.na(tweets$affiliation),]
 
 # Delete data from people with <50 tweets (doesn't play nice with MLM)
 sub50 <- tweets %>% group_by(author) %>% filter(n() <50) %>% summarize()
@@ -150,44 +133,79 @@ tweets_R <- tweets[tweets$Party == "Republican",]
 # Delete temporary data
 rm( "author_metrics", "dwnominate", "dwnominate114", "dwnominate115", "loadings", "metrics","sub50" )
 
-### 1. Effect of party by MFD category, with random intercepts for authors ###
+# Need to average over days in order to get these models to converge
+byday.author <- tweets %>% group_by(totaldays, author) %>% summarize(
+                                                                     Carevirtue = mean(Carevirtue),
+                                                                     Carevice   = mean(Carevice),
+                                                                     
+                                                                     Fairnessvirtue = mean(Fairnessvirtue),
+                                                                     Fairnessvice = mean(Fairnessvice),
+                                                                     
+                                                                     Loyaltyvirtue = mean(Loyaltyvirtue),
+                                                                     Loyaltyvice = mean(Loyaltyvice),
+                                                                     
+                                                                     Authorityvirtue = mean(Authorityvirtue),
+                                                                     Authorityvice = mean(Authorityvice),
+                                                                     
+                                                                     Purityvirtue = mean(Purityvirtue),
+                                                                     Purityvice = mean(Purityvice),
+                                                                     
+                                                                     partyd = mean(partyd),
+                                                                     dim1 = mean(dim1),
+                                                                     electiond = mean(electiond)
+                                                            )
+
+byday.author.D <- byday.author[byday.author$partyd == 1,]
+byday.author.R <- byday.author[byday.author$partyd == 0,]
+
+#### 1. Effect of party by MFD category, with random intercepts for authors ####
 
 foundations <- c( "Carevirtue", "Carevice", "Fairnessvirtue", "Fairnessvice", "Loyaltyvirtue", "Loyaltyvice", "Authorityvirtue",
                  "Authorityvice", "Purityvirtue",  "Purityvice" )
 
 for (i in foundations)  {
   cat( paste( "\n############### Overall frequency for:", i, "###############\n") )
-  dv <- tweets[, i]
-  model <- lmer(dv ~ partyd + (1|author), data=tweets, REML=TRUE)
+  dv <- as.matrix( byday.author[, i] )
+  model <- lmer(dv ~ partyd + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE)
+  
   print( summary(model) )
   cat( paste("Effect size: d =", esize(model, 'partyd') ) )
+  
+  # save model
+  assign( paste(i, "mod", sep = "."), model )
 }
 
-### 2. Effect of time on each category separately for Ds and Rs, as well as tests of the interactions ###
+#### 2. Effect of time on each category separately for Ds and Rs, as well as tests of the interactions ####
 
 for (i in foundations)  {
   cat( paste( "\n\n############### Time effects for:", i, "###############\n") )
   
   cat( '# Democrats:\n')
-  dv <- tweets_D[, i]
-  model <- lmer(dv ~ electiond + (1|author), data=tweets_D, REML=TRUE)
+  dv <- as.matrix( byday.author.D[, i] )
+  model <- lmer(dv ~ electiond + (1+bs(totaldays)|author) + (1|totaldays), data = byday.author.D, REML=TRUE)
   print( summary(model) )
   cat( paste("Democrat effect size: d =", esize(model, 'electiond') ) )
+  # save model
+  assign( paste(i, "modElectionD", sep = "."), model )
   
   cat( '\n\n# Republicans:\n')
-  dv <- tweets_R[, i]
-  model <- lmer(dv ~ electiond + (1|author), data=tweets_R, REML=TRUE)
+  dv <- as.matrix( byday.author.R[, i] )
+  model <- lmer(dv ~ electiond + (1+bs(totaldays)|author) + (1|totaldays), data = byday.author.R, REML=TRUE)
   print( summary(model) )
   cat( paste("Republican effect size: d =", esize(model, 'electiond') ) )
+  # save model
+  assign( paste(i, "modElectionR", sep = "."), model )
 
   cat( '\n\n# Interaction:\n')
-  dv <- tweets[, i]
-  model <- lmer(dv ~ partyd * electiond + (1|author), data=tweets, REML=TRUE)
+  dv <- as.matrix( byday.author[, i] )
+  model <- lmer(dv ~ partyd * electiond + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE)
   print( summary(model) )
+  # save model
+  assign( paste(i, "modElectionInt", sep = "."), model )
 }
 
 
-### 3. INTERRUPTED TIME SERIES ANALYSIS ###
+#### 3. INTERRUPTED TIME SERIES ANALYSIS ####
 # Summarize by day, foundation, and party
 by_day <- tweets.long %>% group_by(totaldays, Party, foundation) %>% summarize(loading = mean(loading),
                                                                                electiond = mean(electiond),
@@ -203,7 +221,7 @@ for (i in foundations)  {
   
   cat( '# Democrats:\n')
   data <- by_day_D[by_day_D$foundation == i,]
-  model <- gls(loading ~ totaldays + days_post_election + electiond, correlation = corAR1(form=~1), data=data)
+  model <- gls(loading ~ totaldays + days_post_election + electiond, correlation = corAR1(form = ~1), data=data)
   print( summary(model) )
 
   cat( '\n\n# Republicans:\n')
@@ -217,7 +235,7 @@ for (i in foundations)  {
   print( summary(model) )
 }
 
-## 4. RETWEETS ##
+#### 4. RETWEETS ####
 for (i in foundations)  {
   cat( paste( "\n############### Retweets for:", i, "###############\n") )
   
@@ -236,4 +254,7 @@ for (i in foundations)  {
   model <- lmer(retweets_T ~ iv * affiliation +  (1|author), data=tweets, REML=TRUE)
   print( summary(model) )
 }
+
+#### PLOTS ####
+source( here('Analysis Code', 'plots.R') )
 
