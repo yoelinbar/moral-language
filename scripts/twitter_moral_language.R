@@ -255,6 +255,16 @@ for (i in foundations)  {
   print( summary(model) )
 }
 
+
+#### 5. FOLLOWER IDEOLOGY ###
+follower.ideo <- fread( here('data', 'follower_ideology.csv'), data.table = FALSE  )
+
+
+# Ideology difference between followers of Ds and Rs
+t.test(follower.ideo$follower.ideo[follower.ideo$Party=='Democratic'],
+       follower.ideo$follower.ideo[follower.ideo$Party=='Republican'])
+
+
 #### PLOTS ####
 source( here('Analysis Code', 'plots.R') )
 
