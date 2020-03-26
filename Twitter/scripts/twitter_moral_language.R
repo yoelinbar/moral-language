@@ -236,5 +236,5 @@ t.test(follower.ideo$follower.ideo[follower.ideo$Party=='Democratic'],
 
 
 #### PLOTS ####
-source( here('Analysis Code', 'plots.R') )
+source( here('scripts', 'plots.R') )
 
