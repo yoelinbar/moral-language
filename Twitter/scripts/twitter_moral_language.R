@@ -1,5 +1,6 @@
 ### REQUIREMENTS ###
 library(here)
+library(data.table)
 
 # Data processing
 library(reshape2)
@@ -23,8 +24,18 @@ here <- here::here
 source( here('scripts', 'utils.R') )
 
 ### DATA RETRIEVAL AND PREPROCESSING ###
-# WARNING: This is a ~250 MB file, don't run over a metered connection
-tweets <- read.csv("https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/SINBQH/XCYBLB")
+# WARNING: If data are not present locally, this will download a ~275 MB file - don't run over a metered connection
+tweets <- NULL
+# try to read local copy
+try( tweets <- fread( here('data', 'tweets_merged.csv'), data.table = FALSE ), silent = TRUE )
+
+if( is.null(tweets) ) {
+  # local read failed, get it remotely
+  tweets <- fread("https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/SINBQH/XCYBLB", 
+                  data.table = FALSE )
+  # save for future runs
+  fwrite(tweets, file = here('data', 'tweets_merged.csv') )
+}
 
 # Write new column w/ dates in POSIX format
 tweets$posixdate <- as.POSIXct(tweets$date, tz="GMT")
