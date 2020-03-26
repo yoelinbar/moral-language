@@ -53,16 +53,6 @@ ggplot(data = semantic_coherence_plot, aes(semcoh, exclusivity)) +
   geom_point() + xlab("Semantic Coherence") + ylab("Exclusivity")
 
 
-
-# Read in DDR loadings file
-loadings <- fread( here('DDR', 'document_dictionary_loadings.tsv'), sep = '\t', header = TRUE, data.table = FALSE )
-colnames(loadings) <- c("generated_id", "Loyaltyvirtue", "Authorityvice", "Loyaltyvice", 
-                        "Fairnessvice", "Carevirtue", "Authorityvirtue", "Purityvice",
-                        "Purityvirtue", "Carevice", "Fairnessvirtue")
-
-# Merge
-data <- merge(tweets_with_topic_probs, loadings, by = "generated_id")
-
 ### CORRELATIONS BETWEEN TOPICS AND MORAL LOADINGS ###
 
 corr <- psych::corr.test(data[ ,85:94],
