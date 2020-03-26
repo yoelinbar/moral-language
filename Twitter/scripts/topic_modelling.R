@@ -1,11 +1,66 @@
-# This is expected to run after the main analyses. It depends on the data structures created by that script.
+### WARNING ###
+# This script will not run as-is. It requires the full tweet text which we cannot post publicly for copyright reasons.
+# It is included here to document what we did, and for our own use.
 
 ### LIBRARIES ###
+library(here)
 library(stm)
+library(data.table)
+library(dplyr)
 library(psych)
+library(tidyverse)
 library(ggcorrplot)
 
-### DATA MANAGEMENT ###
+# Utility functions
+here <- here::here
+source( here('Analysis Code', 'utils.R') )
+
+### PRE-PROCESSING TWEETS ###
+# Read in tweets
+tweets <- fread( here('Congress Tweets', 'AllCongressTweets.csv'), data.table = FALSE )
+
+# Merge DW-NOMINATE w/ tweet file
+dwnominate115 <- fread( here('Congress Tweets', 'DWNOMINATE-115.csv'), data.table = FALSE  )
+dwnominate114 <- fread( here('Congress Tweets', 'DWNOMINATE-114.csv'), data.table = FALSE  )
+
+# Code which Congress(es) they were in
+dwnominate115$C115 <- TRUE
+dwnominate115$C114 <- ifelse( dwnominate115$twitter_handle %in% dwnominate114$twitter_handle, TRUE, FALSE )
+
+# Need to do a little pre-processing on the 114th Congress. We drop those that are also in the 115th.
+dwnominate114 <- dwnominate114[!dwnominate114$twitter_handle %in% dwnominate115$twitter_handle, ]
+
+# Code which Congress(es) they were in
+dwnominate114$C114 <- TRUE
+dwnominate114$C115 <- FALSE
+
+# We also need to recode party_code to affiliation variables then drop that field
+# The affiliation variable already exists in dwnominate115
+dwnominate114$affiliation <- ifelse(dwnominate114$party_code == 100, "D", "R")
+dwnominate114<-within(dwnominate114, rm("party_code"))
+
+# Merge Congresses
+dwnominate<-rbind(dwnominate114, dwnominate115)
+
+# Normalize twitter handle case
+dwnominate$twitter_handle <- tolower(dwnominate$twitter_handle)
+
+# Recode affiliation & dummy
+dwnominate$Party <- ifelse(dwnominate$affiliation == "D", "Democratic", "Republican")
+dwnominate$partyd <- as.numeric(dwnominate$Party == "Democratic")
+
+# Join on twitter handle
+tweets <- merge(tweets,dwnominate, by.x="author", by.y = "twitter_handle", all = FALSE)
+
+# Write new column w/ dates in POSIX format
+tweets$posixdate <- as.POSIXct(tweets$date, tz="GMT")
+
+# 2016 Election Day: 11-08
+tweets$election <- ifelse( tweets$posixdate<as.POSIXct("2016-11-09 00:00", tz="GMT"), 'pre', 'post' ) 
+
+# limit to 2016 onwards
+tweets <- tweets[tweets$posixdate >= as.POSIXct("2016-01-01 00:00"),]
+
 # Keep only tweets & metadata columns
 tweets_stm <- select(tweets, 'author', 'tweet_cleaned', 'affiliation', 'election', 'generated_id')
 
@@ -52,6 +107,16 @@ semantic_coherence_plot = data.frame(semcoh, exclusivity)
 ggplot(data = semantic_coherence_plot, aes(semcoh, exclusivity)) +
   geom_point() + xlab("Semantic Coherence") + ylab("Exclusivity")
 
+
+
+# Read in DDR loadings file
+loadings <- fread( here('DDR', 'document_dictionary_loadings.tsv'), sep = '\t', header = TRUE, data.table = FALSE )
+colnames(loadings) <- c("generated_id", "Loyaltyvirtue", "Authorityvice", "Loyaltyvice", 
+                        "Fairnessvice", "Carevirtue", "Authorityvirtue", "Purityvice",
+                        "Purityvirtue", "Carevice", "Fairnessvirtue")
+
+# Merge
+data <- merge(tweets_with_topic_probs, loadings, by = "generated_id")
 
 ### CORRELATIONS BETWEEN TOPICS AND MORAL LOADINGS ###
 
