@@ -1,6 +1,5 @@
 ### REQUIREMENTS ###
 library(here)
-library(data.table)
 
 # Data processing
 library(reshape2)
@@ -13,6 +12,7 @@ library(lme4)
 library(lmerTest)
 library(nlme)
 library(splines)
+library(optimx)
 
 # Plotting
 library(ggplot2)
@@ -20,58 +20,11 @@ library(ggplot2)
 
 # Utility functions
 here <- here::here
-source( here('Analysis Code', 'utils.R') )
+source( here('scripts', 'utils.R') )
 
-### PREPROCESSING ###
-tweets <- fread( here('Congress Tweets', 'AllCongressTweets.csv'), data.table = FALSE )
-
-# Merge DW-NOMINATE w/ tweet file
-dwnominate115 <- fread( here('Congress Tweets', 'DWNOMINATE-115.csv'), data.table = FALSE  )
-dwnominate114 <- fread( here('Congress Tweets', 'DWNOMINATE-114.csv'), data.table = FALSE  )
-
-# Code which Congress(es) they were in
-dwnominate115$C115 <- TRUE
-dwnominate115$C114 <- ifelse( dwnominate115$twitter_handle %in% dwnominate114$twitter_handle, TRUE, FALSE )
-
-# Need to do a little pre-processing on the 114th Congress. We drop those that are also in the 115th.
-dwnominate114 <- dwnominate114[!dwnominate114$twitter_handle %in% dwnominate115$twitter_handle, ]
-
-# Code which Congress(es) they were in
-dwnominate114$C114 <- TRUE
-dwnominate114$C115 <- FALSE
-
-# We also need to recode party_code to affiliation variables then drop that field
-# The affiliation variable already exists in dwnominate115
-dwnominate114$affiliation <- ifelse(dwnominate114$party_code == 100, "D", "R")
-dwnominate114<-within(dwnominate114, rm("party_code"))
-
-# Merge Congresses
-dwnominate<-rbind(dwnominate114, dwnominate115)
-
-# Normalize twitter handle case
-dwnominate$twitter_handle <- tolower(dwnominate$twitter_handle)
-
-# Recode affiliation & dummy
-dwnominate$Party <- ifelse(dwnominate$affiliation == "D", "Democratic", "Republican")
-dwnominate$partyd <- as.numeric(dwnominate$Party == "Democratic")
-
-# Join on twitter handle
-tweets <- merge(tweets,dwnominate, by.x="author", by.y = "twitter_handle", all = FALSE)
-
-# Read in DDR output file
-loadings <- fread( here('DDR', 'document_dictionary_loadings.tsv'), sep = '\t', header = TRUE, data.table = FALSE )
-colnames(loadings) <- c("generated_id", "Loyaltyvirtue", "Authorityvice", "Loyaltyvice", 
-						"Fairnessvice", "Carevirtue", "Authorityvirtue", "Purityvice",
-                        "Purityvirtue", "Carevice", "Fairnessvirtue")
-                        
-# Merge
-tweets <- merge(loadings,tweets,by="generated_id", all.x = FALSE, all.y = TRUE)
-
-# Log- transform retweets/likes
-tweets$retweets_T <- log(tweets$retweets + 1)
-tweets$favorites_T <- log(tweets$favorites + 1)
-
-### CREATE DATES AND ELECTION VARIABLE ###
+### DATA RETRIEVAL AND PREPROCESSING ###
+# WARNING: This is a ~250 MB file, don't run over a metered connection
+tweets <- read.csv("https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/SINBQH/XCYBLB")
 
 # Write new column w/ dates in POSIX format
 tweets$posixdate <- as.POSIXct(tweets$date, tz="GMT")
@@ -130,9 +83,6 @@ tweets.long <- melt(tweets, measure.var = c("Fairnessvirtue", "Carevirtue",
 tweets_D <- tweets[tweets$Party == "Democratic",]
 tweets_R <- tweets[tweets$Party == "Republican",]
 
-# Delete temporary data
-rm( "author_metrics", "dwnominate", "dwnominate114", "dwnominate115", "loadings", "metrics","sub50" )
-
 # Need to average over days in order to get these models to converge
 byday.author <- tweets %>% group_by(totaldays, author) %>% summarize(
                                                                      Carevirtue = mean(Carevirtue),
@@ -155,6 +105,11 @@ byday.author <- tweets %>% group_by(totaldays, author) %>% summarize(
                                                                      electiond = mean(electiond)
                                                             )
 
+# Standardized DVs
+for (i in foundations) {
+  byday.author[[i]] <- scale(byday.author[[i]], center = TRUE, scale = TRUE)
+}
+
 byday.author.D <- byday.author[byday.author$partyd == 1,]
 byday.author.R <- byday.author[byday.author$partyd == 0,]
 
@@ -166,7 +121,8 @@ foundations <- c( "Carevirtue", "Carevice", "Fairnessvirtue", "Fairnessvice", "L
 for (i in foundations)  {
   cat( paste( "\n############### Overall frequency for:", i, "###############\n") )
   dv <- as.matrix( byday.author[, i] )
-  model <- lmer(dv ~ partyd + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE)
+  model <- lmer(dv ~ partyd + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                            optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
   
   print( summary(model) )
   cat( paste("Effect size: d =", esize(model, 'partyd') ) )
@@ -182,7 +138,8 @@ for (i in foundations)  {
   
   cat( '# Democrats:\n')
   dv <- as.matrix( byday.author.D[, i] )
-  model <- lmer(dv ~ electiond + (1+bs(totaldays)|author) + (1|totaldays), data = byday.author.D, REML=TRUE)
+  model <- lmer(dv ~ electiond + (1+bs(totaldays)|author) + (1|totaldays), data = byday.author.D, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                   optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
   print( summary(model) )
   cat( paste("Democrat effect size: d =", esize(model, 'electiond') ) )
   # save model
@@ -190,7 +147,8 @@ for (i in foundations)  {
   
   cat( '\n\n# Republicans:\n')
   dv <- as.matrix( byday.author.R[, i] )
-  model <- lmer(dv ~ electiond + (1+bs(totaldays)|author) + (1|totaldays), data = byday.author.R, REML=TRUE)
+  model <- lmer(dv ~ electiond + (1+bs(totaldays)|author) + (1|totaldays), data = byday.author.R, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                   optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
   print( summary(model) )
   cat( paste("Republican effect size: d =", esize(model, 'electiond') ) )
   # save model
@@ -198,7 +156,8 @@ for (i in foundations)  {
 
   cat( '\n\n# Interaction:\n')
   dv <- as.matrix( byday.author[, i] )
-  model <- lmer(dv ~ partyd * electiond + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE)
+  model <- lmer(dv ~ partyd * electiond + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                      optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
   print( summary(model) )
   # save model
   assign( paste(i, "modElectionInt", sep = "."), model )

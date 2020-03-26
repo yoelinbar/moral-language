@@ -6,7 +6,8 @@
 for (i in foundations)  {
   cat( paste( "\n############### Overall frequency for:", i, "(DW-Nominate) ###############\n") )
   dv <- as.matrix( byday.author[, i] )
-  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE)
+  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                     optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
   print( summary(model) )
   # save model
   assign( paste(i, "mod.dwnom", sep = "."), model )
@@ -16,7 +17,8 @@ for (i in foundations)  {
 for (i in foundations)  {
   cat( paste( "\n############### DW-Nominate effects for Democrats only:", i, "###############\n") )
   dv <- as.matrix( byday.author.D[, i] )
-  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author.D, REML=TRUE)
+  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author.D, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                       optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
   print( summary(model) )
   # save model
   assign( paste(i, "mod.dwnom.D", sep = "."), model )
@@ -25,7 +27,8 @@ for (i in foundations)  {
 for (i in foundations)  {
   cat( paste( "\n############### DW-Nominate effects for Republicans only:", i, "###############\n") )
   dv <- as.matrix( byday.author.R[, i] )
-  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author.R, REML=TRUE)
+  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author.R, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                     optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
   print( summary(model) )
   # save model
   assign( paste(i, "mod.dwnom.R", sep = "."), model )
