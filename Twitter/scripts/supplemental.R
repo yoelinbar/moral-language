@@ -1,4 +1,4 @@
-# This is expect to run after the main analyses. It depends on the data structures created by that script.
+# This is expected to run after the main analyses. It depends on the data structures created by that script.
 
 ### Overall DW-Nominate effects on moral language ###
 ### Effect of voting record on each MFD category, with random intercepts for authors ###
