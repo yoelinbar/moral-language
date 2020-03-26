@@ -4,16 +4,16 @@ The main dataset is not included here due to GitHub's filesize limits. The scrip
 Some smaller data files are included (see below)
 
 ### REPLICATION SCRIPTS ###
-These will run for anyone and can be used to reproduce the results in the paper
+These will run for anyone and can be used to reproduce the results in the paper  
 scripts/twitter_moral_language.R: analyses in the body of the paper  
 scripts/supplemental.R: analyses in the Supplemental Material  
 scripts/plots.R: generates all figures (main and supplemental)  
 scripts/utils.R: some utility functions you probably don't need to worry about  
 
 ### INTERNAL-USE SCRIPTS ###
-These scripts will not run unaltered. They are included for documentation and versioning.
-scripts/ddr_validation.py: Compute F1 scores for DDR loadings
-scripts/rater_reliability.R: Inter-rater reliability for human coders
+These scripts will not run unaltered. They are included for documentation and versioning.  
+scripts/ddr_validation.py: Compute F1 scores for DDR loadings  
+scripts/rater_reliability.R: Inter-rater reliability for human coders  
 scripts/topic_modeling.R: topic models (requires access to full tweets)
 
 ### DATA ###
