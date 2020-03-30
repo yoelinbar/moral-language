@@ -15,6 +15,7 @@ scripts/utils.R: some utility functions you probably don't need to worry about
 These scripts will not run unaltered. They are included for documentation and versioning. 
    
 scripts/ddr_validation.py: Compute F1 scores for DDR loadings  
+scripts/data_merge.R: Merge tweet and legislator data to create shareable data file  
 scripts/rater_reliability.R: Inter-rater reliability for human coders  
 scripts/topic_modeling.R: topic models (requires access to full tweets)
 
