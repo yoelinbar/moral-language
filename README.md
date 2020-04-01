@@ -18,6 +18,7 @@ scripts/ddr_validation.py: Compute F1 scores for DDR loadings
 scripts/data_merge.R: Merge tweet and legislator data to create shareable data file  
 scripts/rater_reliability.R: Inter-rater reliability for human coders  
 scripts/topic_modeling.R: topic models (requires access to full tweets)
+scripts/negative_binary_regressions.do: Stata do-file to model retweets and likes  
 
 ### DATA ###
 data/RetweetPlot: Predicted number of retweets for levels of moral language from Stata's "margins" command; used to generate Figure 3  
