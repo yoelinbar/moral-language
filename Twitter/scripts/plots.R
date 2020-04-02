@@ -68,10 +68,11 @@ retweets <- arrange(transform(retweets, Category=factor(Category,levels=plotorde
 
 retweetplot <- ggplot(retweets, aes(x=Similarity, y=Margin, geom=Affiliation))
 
-print (retweetplot + geom_line(aes(colour=Affiliation)) + geom_point(aes(colour=Affiliation)) + facet_wrap(~Category, ncol=5) + 
-         theme_bw() + scale_colour_manual(labels=c("Democratic", "Republican"), values=c("royalblue4","#9E2E2E")) + 
+print (retweetplot + geom_line(aes(colour=Affiliation)) + geom_point(aes(colour=Affiliation)) + facet_wrap(~Category, ncol=5, scales = "free") + 
+         scale_colour_manual(labels=c("Democratic", "Republican"), values=c("royalblue4","#9E2E2E")) + 
          geom_ribbon(aes(ymin=CIlow, ymax=CIhigh), alpha=0.3) + ylab("Predicted Retweets") + labs(colour="Party") +
-         scale_x_continuous(breaks=c(0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35)) + theme(axis.text.x = element_text(angle=90))
+         scale_x_continuous(breaks=c(0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35)) + theme(axis.text.x = element_text(angle=90)) +
+         theme_bw() + theme(legend.position = "top")
 )
 
 ### DW-NOMINATE PLOT  (SUPPLEMENTAL) ###
