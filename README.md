@@ -4,8 +4,10 @@ The data files are not included here due to GitHub's filesize limits. The script
 Some smaller data files are included (see below)
 
 If you would like to manually download the datasets:
-[https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL](Study 1)
-[https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL/E2WK6A](Study 2)
+
+Study 1: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL
+
+Study 2: https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL/E2WK6A
 
 ### REPLICATION SCRIPTS ###
 These will run for anyone and can be used to reproduce the results in the paper.  
