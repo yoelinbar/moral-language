@@ -46,13 +46,11 @@ foundation_names <- c(
   `Purityvice` = "Purity-vice"
 )
 
-scatterplotdata <- arrange(transform(bycongress.speaker.recent.long, foundation=factor(foundation,levels=categoryorder)), foundation)
+scatterplotdata <- arrange(transform(bycongress.speaker.long, foundation=factor(foundation,levels=categoryorder)), foundation)
 
 set.seed(1)
 scatterplotdata$numericfoundation <- as.numeric(scatterplotdata$foundation)
 scatterplotdata$numericfoundation <- jitter(scatterplotdata$numericfoundation)
-
-scatterplotdata$party <- ifelse(scatterplotdata$partyd == 0, "R", "D")
 
 scatterplot <- ggplot(scatterplotdata, aes(x=foundation, y=loading, color=party)) + 
   geom_jitter(aes(shape=party, colour=party), size = 1) + geom_boxplot(outlier.shape=NA, alpha=0.5)
@@ -74,10 +72,10 @@ plotdata <- summarySEwithin(data.long, measurevar="loading", betweenvars=c("part
 
 
 ## SENATE ##
-plotdata_senate_97 <- subset(plotdata, chamberd == 1)
-plotdata_senate_97$congress <- as.numeric(levels(plotdata_senate_97$congress))[plotdata_senate_97$congress]
+plotdata_senate <- subset(plotdata, chamberd == 1)
+plotdata_senate$congress <- as.numeric(levels(plotdata_senate$congress))[plotdata_senate$congress]
 
-plot_senate <- ggplot(na.omit(plotdata_senate_97), aes(x=congress, y=loading, group=partyd))
+plot_senate <- ggplot(na.omit(plotdata_senate), aes(x=congress, y=loading, group=partyd))
 
 plot_senate + facet_wrap(~foundation, nrow=2, ncol=5, labeller = labeller(foundation = as_labeller(foundation_names) ), scales = "free") +
   geom_rect(aes(xmin=114,
@@ -115,11 +113,11 @@ plot_senate + facet_wrap(~foundation, nrow=2, ncol=5, labeller = labeller(founda
 
 
 ## HOUSE ##
-plotdata_house_97 <- subset(plotdata, chamberd == 0)
-plotdata_house_97$congress <- as.numeric(levels(plotdata_house_97$congress))[plotdata_house_97$congress]
+plotdata_house <- subset(plotdata, chamberd == 0)
+plotdata_house$congress <- as.numeric(levels(plotdata_house$congress))[plotdata_house$congress]
 
 
-plot_house <- ggplot(na.omit(plotdata_house_97), aes(x=congress, y=loading, group=partyd))
+plot_house <- ggplot(na.omit(plotdata_house), aes(x=congress, y=loading, group=partyd))
 
 plot_house + facet_wrap(~foundation, nrow=2, ncol=5, labeller = labeller(foundation = as_labeller(foundation_names) ), scales = "free") +
   geom_rect(aes(xmin=112,
