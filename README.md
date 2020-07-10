@@ -1,15 +1,23 @@
 ### OVERVIEW ###
 These are replication scripts for the paper "Partisan Differences in Moral Language Use by U.S. Political Elites."
-The main dataset is not included here due to GitHub's filesize limits. The script will attempt to download it from Dataverse.
+The data files are not included here due to GitHub's filesize limits. The scripts will attempt to download them from Dataverse.
 Some smaller data files are included (see below)
+
+If you would like to manually download the datasets:
+[https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL](Study 1)
+[https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL/E2WK6A](Study 2)
 
 ### REPLICATION SCRIPTS ###
 These will run for anyone and can be used to reproduce the results in the paper.  
-  
-scripts/twitter_moral_language.R: analyses in the body of the paper  
-scripts/supplemental.R: analyses in the Supplemental Material  
-scripts/plots.R: generates all figures (main and supplemental)  
-scripts/utils.R: some utility functions you probably don't need to worry about  
+
+Study 1:  
+Twitter/scripts/twitter_moral_language.R: Study 1 analyses  
+Twitter/scripts/plots.R: generates figures for Twitter data (main and supplemental)  
+Twitter/scripts/utils.R: some utility functions you probably don't need to worry about 
+
+Study 2:
+Congress/scripts/congress_moral_language.R: Study 2 analyses
+Congress/scripts/plots.R: generates figures for Congress data
 
 ### INTERNAL-USE SCRIPTS ###
 These scripts will not run unaltered. They are included for documentation and versioning. 
@@ -21,7 +29,7 @@ scripts/topic_modeling.R: topic models (requires access to full tweets)
 scripts/negative_binary_regressions.do: Stata do-file to model retweets and likes  
 
 ### DATA ###
-data/RetweetPlot: Predicted number of retweets for levels of moral language from Stata's "margins" command; used to generate Figure 3  
+data/RetweetPlot: Predicted number of retweets for levels of moral language from Stata's "margins" command; used to generate figure in Supplemental Material  
 data/follower_ideology.csv: average ideological placement of a sample of 500 followers for each Congressperson
 
 ### NOTES ###
