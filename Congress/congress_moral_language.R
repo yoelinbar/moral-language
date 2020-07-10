@@ -14,6 +14,7 @@ library(stats)
 
 library(here)
 
+
 #### DATA ####
 
 # WARNING: If data are not present locally, this will download a ~966 MB file - don't run over a metered connection
@@ -29,6 +30,64 @@ if( is.null(data) ) {
   fwrite(data, file = here('congress_data.csv') )
 }
 
+
+#### PREPROCESSING ####
+
+# Read in speaker info from database
+sqlite_file = here::here( 'CongressInfo.sqlite' )
+conn = dbConnect(drv=RSQLite::SQLite(), dbname=sqlite_file)
+speakerinfo <- dbGetQuery(conn=conn, statement=paste("SELECT * FROM speakerinfo", sep=""))
+dbDisconnect(conn)
+
+# Loadings
+loadings <- fread(input= here::here( 'DDR', 'document_dictionary_loadings.tsv' ), sep = '\t', header = TRUE)
+
+# Rename columns
+loadings <- plyr::rename(loadings, c("ID"="speech_id", "loyaltyVirtue_base" = "Loyaltyvirtue", "authorityVice_base" = "Authorityvice",
+                                     "loyaltyVice_base" = "Loyaltyvice", "fairnessVice_base" = "Fairnessvice", "careVirtue_base" = "Carevirtue",
+                                     "authorityVirtue_base" = "Authorityvirtue", "sancityVice_base" = "Purityvice", "sancityVirtue_base" = "Purityvirtue",
+                                     "careVice_base" = "Carevice", "fairnessVirtue_base" = "Fairnessvirtue"))
+
+data <- merge(loadings, speakerinfo, by="speech_id", all=FALSE)
+
+# Create dummy coded party variable
+data$partyd <- as.numeric(data$party == "D")
+# Convert congress column to numeric
+data$congress <- as.numeric(data$congress)
+
+# Subset to congresses after 97th - shifts in party positions over time
+data <- subset(data, congress >=97)
+
+# Party control variables
+party_control <- read.csv( here::here( 'party_control.csv' ) )
+# Clean up Senate columns
+# 1st 2 digits
+party_control$SenateDemocrats <- substr(party_control$SenateDemocrats, start=1, stop=2)
+party_control$SenateRepublicans <- substr(party_control$SenateRepublicans, start=1, stop=2)
+# convert to numeric
+party_control$SenateDemocrats <- as.numeric(party_control$SenateDemocrats)
+party_control$SenateRepublicans <- as.numeric(party_control$SenateRepublicans)
+
+party_control$senate_control <- ifelse(party_control$SenateDemocrats > party_control$SenateRepublicans, "D", "R")
+party_control$house_control <- ifelse(party_control$HouseDemocrats > party_control$HouseRepublicans, "D", "R")
+
+# Fix congress number column
+party_control$congress <- as.numeric(gsub("\\D", "", party_control$Congress)) 
+
+# Merge w/ dataframe for mlm analysis
+data <- merge(data, party_control, by = "congress", all = FALSE)
+
+# Long form data (used for some plots)
+
+data.long <- melt(data, measure.var = c("Fairnessvirtue", "Carevirtue", 
+                                        "Loyaltyvirtue", "Authorityvirtue", 
+                                        "Purityvirtue", "Fairnessvice", 
+                                        "Carevice", "Loyaltyvice", 
+                                        "Authorityvice", "Purityvice"),
+                  variable.name = "foundation",
+                  value.name = "loading",
+                  na.rm = TRUE
+)
 
 ##### MODELLING #####
 
