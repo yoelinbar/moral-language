@@ -21,20 +21,20 @@ library(ggplot2)
 
 # Utility functions
 here <- here::here
-source( here('scripts', 'utils.R') )
+source( here('Twitter', 'scripts', 'utils.R') )
 
 ### DATA RETRIEVAL AND PREPROCESSING ###
 # WARNING: If data are not present locally, this will download a ~275 MB file - don't run over a metered connection
 tweets <- NULL
 # try to read local copy
-try( tweets <- fread( here('data', 'tweets_merged.csv'), data.table = FALSE ), silent = TRUE )
+try( tweets <- fread( here('Twitter', 'data', 'tweets_merged.csv'), data.table = FALSE ), silent = TRUE )
 
 if( is.null(tweets) ) {
   # local read failed, get it remotely
   tweets <- fread("https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/SINBQH/XCYBLB", 
                   data.table = FALSE )
   # save for future runs
-  fwrite(tweets, file = here('data', 'tweets_merged.csv') )
+  fwrite(tweets, file = here('Twitter', 'data', 'tweets_merged.csv') )
 }
 
 # Write new column w/ dates in POSIX format
@@ -78,6 +78,10 @@ tweets<- tweets[!(tweets$author %in% sub50$author),]
 # NA for any foundation means DDR couldn't compute similiaries for that tweet
 count_no_loading<-sum(is.na(tweets$Loyaltyvice))
 tweets<-tweets[!is.na(tweets$Loyaltyvice),]
+
+# List of foundations
+foundations <- c( "Carevirtue", "Carevice", "Fairnessvirtue", "Fairnessvice", "Loyaltyvirtue", "Loyaltyvice", "Authorityvirtue",
+                  "Authorityvice", "Purityvirtue",  "Purityvice" )
 
 # Long format required for some analyses and figures 
 tweets.long <- melt(tweets, measure.var = c("Fairnessvirtue", "Carevirtue", 
@@ -124,25 +128,52 @@ for (i in foundations) {
 byday.author.D <- byday.author[byday.author$partyd == 1,]
 byday.author.R <- byday.author[byday.author$partyd == 0,]
 
-#### 1. Effect of party by MFD category, with random intercepts for authors ####
-
-foundations <- c( "Carevirtue", "Carevice", "Fairnessvirtue", "Fairnessvice", "Loyaltyvirtue", "Loyaltyvice", "Authorityvirtue",
-                 "Authorityvice", "Purityvirtue",  "Purityvice" )
+#### Effect of party by MFD category, with random intercepts for authors ####
 
 for (i in foundations)  {
   cat( paste( "\n############### Overall frequency for:", i, "###############\n") )
   dv <- as.matrix( byday.author[, i] )
   model <- lmer(dv ~ partyd + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
                                                                                                                             optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
-  
   print( summary(model) )
-  cat( paste("Effect size: d =", esize(model, 'partyd') ) )
   
   # save model
   assign( paste(i, "mod", sep = "."), model )
 }
 
-#### 2. Effect of time on each category separately for Ds and Rs, as well as tests of the interactions ####
+### Overall DW-Nominate effects on moral language ###
+for (i in foundations)  {
+  cat( paste( "\n############### Overall frequency for:", i, "(DW-Nominate) ###############\n") )
+  dv <- as.matrix( byday.author[, i] )
+  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                     optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
+  print( summary(model) )
+  # save model
+  assign( paste(i, "mod.dwnom", sep = "."), model )
+}
+
+### EXTREMITY EFFECTS (DW-NOM W/IN PARTY) ###
+for (i in foundations)  {
+  cat( paste( "\n############### DW-Nominate effects for Democrats only:", i, "###############\n") )
+  dv <- as.matrix( byday.author.D[, i] )
+  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author.D, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                       optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
+  print( summary(model) )
+  # save model
+  assign( paste(i, "mod.dwnom.D", sep = "."), model )
+}
+
+for (i in foundations)  {
+  cat( paste( "\n############### DW-Nominate effects for Republicans only:", i, "###############\n") )
+  dv <- as.matrix( byday.author.R[, i] )
+  model <- lmer(dv ~ dim1 + (1+bs(totaldays)|author) + (1|totaldays), data=byday.author.R, REML=TRUE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                                                                                     optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)))
+  print( summary(model) )
+  # save model
+  assign( paste(i, "mod.dwnom.R", sep = "."), model )
+}
+
+#### Effects of time on each category separately for Ds and Rs, as well as tests of the interactions ####
 
 for (i in foundations)  {
   cat( paste( "\n\n############### Time effects for:", i, "###############\n") )
@@ -174,8 +205,7 @@ for (i in foundations)  {
   assign( paste(i, "modElectionInt", sep = "."), model )
 }
 
-
-#### 3. INTERRUPTED TIME SERIES ANALYSIS ####
+#### INTERRUPTED TIME SERIES ANALYSIS ####
 # Summarize by day, foundation, and party
 by_day <- tweets.long %>% group_by(totaldays, Party, foundation) %>% summarize(loading = mean(loading),
                                                                                electiond = mean(electiond),
@@ -205,29 +235,8 @@ for (i in foundations)  {
   print( summary(model) )
 }
 
-#### 4. RETWEETS ####
-for (i in foundations)  {
-  cat( paste( "\n############### Retweets for:", i, "###############\n") )
-  
-  cat( '# Democrats:\n')
-  iv <- tweets_D[, i]
-  model <- lmer(retweets_T ~ iv + (1|author), data=tweets_D, REML=TRUE)
-  print( summary(model) )
-  
-  cat( '\n\n# Republicans:\n')
-  iv <- tweets_R[, i]
-  model <- lmer(retweets_T ~ iv + (1|author), data=tweets_R, REML=TRUE)
-  print( summary(model) )
-  
-  cat( '\n\n# Interaction:\n')
-  iv <- tweets[, i]
-  model <- lmer(retweets_T ~ iv * affiliation +  (1|author), data=tweets, REML=TRUE)
-  print( summary(model) )
-}
-
-
-#### 5. FOLLOWER IDEOLOGY ###
-follower.ideo <- fread( here('data', 'follower_ideology.csv'), data.table = FALSE  )
+#### FOLLOWER IDEOLOGY ###
+follower.ideo <- fread( here('Twitter', 'data', 'follower_ideology.csv'), data.table = FALSE  )
 
 
 # Ideology difference between followers of Ds and Rs
@@ -236,5 +245,5 @@ t.test(follower.ideo$follower.ideo[follower.ideo$Party=='Democratic'],
 
 
 #### PLOTS ####
-source( here('scripts', 'plots.R') )
+source( here('Twitter', 'scripts', 'plots.R') )
 
