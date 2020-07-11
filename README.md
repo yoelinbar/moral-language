@@ -17,7 +17,7 @@ Twitter/scripts/twitter_moral_language.R: Study 1 analyses
 Twitter/scripts/plots.R: generates figures for Twitter data (main and supplemental)  
 Twitter/scripts/utils.R: some utility functions you probably don't need to worry about 
 
-Study 2:
+Study 2:  
 Congress/scripts/congress_moral_language.R: Study 2 analyses  
 Congress/scripts/plots.R: generates figures for Congress data
 
