@@ -24,15 +24,15 @@ Congress/scripts/plots.R: generates figures for Congress data
 ### INTERNAL-USE SCRIPTS ###
 These scripts will not run unaltered. They are included for documentation and versioning. 
    
-scripts/ddr_validation.py: Compute F1 scores for DDR loadings  
-scripts/data_merge.R: Merge tweet and legislator data to create shareable data file  
-scripts/rater_reliability.R: Inter-rater reliability for human coders  
-scripts/topic_modeling.R: topic models (requires access to full tweets)  
-scripts/negative_binary_regressions.do: Stata do-file to model retweets and likes  
+Twitter/scripts/ddr_validation.py: Compute F1 scores for DDR loadings  
+Twitter/scripts/data_merge.R: Merge tweet and legislator data to create shareable data file  
+Twitter/scripts/rater_reliability.R: Inter-rater reliability for human coders  
+Twitter/scripts/topic_modeling.R: topic models (requires access to full tweets)  
+Twitter/scripts/negative_binary_regressions.do: Stata do-file to model retweets and likes  
 
 ### DATA ###
-data/RetweetPlot: Predicted number of retweets for levels of moral language from Stata's "margins" command; used to generate figure in Supplemental Material  
-data/follower_ideology.csv: average ideological placement of a sample of 500 followers for each Congressperson
+Twitter/data/RetweetPlot: Predicted number of retweets for levels of moral language from Stata's "margins" command; used to generate figure in Supplemental Material  
+Twitter/data/follower_ideology.csv: average ideological placement of a sample of 500 followers for each Congressperson
 
 ### NOTES ###
 The dataset does not include the full tweet text for copyright reasons. Text for any tweet can be retrieved from Twitter's
