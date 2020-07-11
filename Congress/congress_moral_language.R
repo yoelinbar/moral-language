@@ -20,6 +20,7 @@ library(here)
 # WARNING: If data are not present locally, this will download a ~966 MB file - don't run over a metered connection
 data <- NULL
 # try to read local copy
+here <- here::here
 try( data <- fread( here('congress_data.csv'), data.table = FALSE ), silent = TRUE )
 
 if( is.null(data) ) {

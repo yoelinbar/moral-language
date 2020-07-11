@@ -3,11 +3,8 @@ These are replication scripts for the paper "Partisan Differences in Moral Langu
 The data files are not included here due to GitHub's filesize limits. The scripts will attempt to download them from Dataverse.
 Some smaller data files are included (see below).
 
-If you would like to manually download the datasets:
-
-Study 1: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SINBQH
-
-Study 2: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL
+If you would like to manually download the datasets from Dataverse:  
+https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FQ8MIL
 
 ### REPLICATION SCRIPTS ###
 These will run for anyone and can be used to reproduce the results in the paper.  

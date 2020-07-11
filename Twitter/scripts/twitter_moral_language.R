@@ -31,7 +31,7 @@ try( tweets <- fread( here('Twitter', 'data', 'tweets_merged.csv'), data.table =
 
 if( is.null(tweets) ) {
   # local read failed, get it remotely
-  tweets <- fread("https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/SINBQH/XCYBLB", 
+  tweets <- fread("https://dataverse.harvard.edu/api/access/datafile/:persistentId?persistentId=doi:10.7910/DVN/FQ8MIL/WLUNNK", 
                   data.table = FALSE )
   # save for future runs
   fwrite(tweets, file = here('Twitter', 'data', 'tweets_merged.csv') )
