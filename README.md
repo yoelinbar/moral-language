@@ -1,7 +1,7 @@
 ### OVERVIEW ###
 These are replication scripts for the paper "Partisan Differences in Moral Language Use by U.S. Political Elites."
 The data files are not included here due to GitHub's filesize limits. The scripts will attempt to download them from Dataverse.
-Some smaller data files are included (see below)
+Some smaller data files are included (see below).
 
 If you would like to manually download the datasets:
 
@@ -18,7 +18,7 @@ Twitter/scripts/plots.R: generates figures for Twitter data (main and supplement
 Twitter/scripts/utils.R: some utility functions you probably don't need to worry about 
 
 Study 2:
-Congress/scripts/congress_moral_language.R: Study 2 analyses
+Congress/scripts/congress_moral_language.R: Study 2 analyses 
 Congress/scripts/plots.R: generates figures for Congress data
 
 ### INTERNAL-USE SCRIPTS ###
@@ -27,7 +27,7 @@ These scripts will not run unaltered. They are included for documentation and ve
 scripts/ddr_validation.py: Compute F1 scores for DDR loadings  
 scripts/data_merge.R: Merge tweet and legislator data to create shareable data file  
 scripts/rater_reliability.R: Inter-rater reliability for human coders  
-scripts/topic_modeling.R: topic models (requires access to full tweets)
+scripts/topic_modeling.R: topic models (requires access to full tweets) 
 scripts/negative_binary_regressions.do: Stata do-file to model retweets and likes  
 
 ### DATA ###
