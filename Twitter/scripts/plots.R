@@ -104,9 +104,3 @@ print( dwnominateplotted + geom_point(size=0.5, alpha=0.5, aes(colour=dim1)) +
          facet_grid(~foundation) + theme(panel.spacing.y=unit(3, "lines")) +
          scale_x_continuous(name="DW-NOMINATE (Voting record)") + labs(colour="Ideology")
 )
-
-### FOLLOWER IDEOLOGY PLOT (SUPPLEMENTAL) ###
-print( ggplot(follower.ideo, aes(x=Party, y=follower.ideo)) + geom_jitter(aes(colour=Party)) +
-  geom_boxplot(outlier.shape=NA, alpha=0.5) + scale_colour_manual(values=c("royalblue4","#9E2E2E")) + 
-  labs(y="More Conservative Ideology") + labs(x="Congressperson's Party") + ggtitle("Twitter Follower Ideology") +
-  theme_bw() + theme(legend.position="none") )
